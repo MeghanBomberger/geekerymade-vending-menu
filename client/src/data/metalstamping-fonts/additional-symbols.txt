@@ -1,0 +1,162 @@
+{
+    setName: "additional symbols",
+    stamps: [
+        {
+            name: "anchor",
+            image: "anchor-stamp-4mm.svg",
+            value: "(anchor)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "bee",
+            image: "bee-stamp-4mm.svg",
+            value: "(bee)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "bird",
+            image: "bird-stamp-4mm.svg",
+            value: "(bird)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "comma",
+            image: "comma.svg",
+            value: "(comma)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "dagger",
+            image: "dagger-stamp-4mm.svg",
+            value: "(dagger)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "daisy",
+            image: "daisy.svg",
+            value: "(daisy)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "diamond",
+            image: "diamond-stamp-4mm.svg",
+            value: "(diamond)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "dollar",
+            image: "dollar.svg",
+            value: "(dollar)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "dragon",
+            image: "dragon-stamp-8mm.svg",
+            value: "(dragon)",
+            height: "8mm",
+            halfInch: false
+        },{
+            name: "exclamation",
+            image: "exclamation.svg",
+            value: "(exclamation)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "fox",
+            image: "fox-stamp-4mm.svg",
+            value: "(fox)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "hashtag",
+            image: "hashtag.svg",
+            value: "(hashtag)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "heart",
+            image: "heart.svg",
+            value: "(heart)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "heart-semicolon",
+            image: "heart-semicolon-stamp-4mm.svg",
+            value: "(heart-semicolon)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "key",
+            image: "key-stamp-4mm.svg",
+            value: "(key)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "lotus",
+            image: "lotus-stamp-4mm.svg",
+            value: "(lotus)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "mermaid",
+            image: "mermaid-stamp-8mm.svg",
+            value: "(mermaid)",
+            height: "8mm",
+            halfInch: false
+        },{
+            name: "mountain",
+            image: "mountain-stamp-4mm.svg",
+            value: "(mountain)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "parathenasis",
+            image: "parathenasis.svg",
+            value: "(parathenasis)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "peace-sign",
+            image: "peace-sign-stamp-4mm.svg",
+            value: "(peace-sign)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "period",
+            image: "period.svg",
+            value: "(period)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "question",
+            image: "question.svg",
+            value: "(question)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "smile",
+            image: "smile-stamp-4mm.svg",
+            value: "(smile)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "spiral",
+            image: "spiral-stamp-4mm.svg",
+            value: "(spiral)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "star",
+            image: "star-stamp-4mm.svg",
+            value: "(star)",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "unicorn",
+            image: "unicorn-stamp-8mm.svg",
+            value: "(unicorn)",
+            height: "8mm",
+            halfInch: false
+        }
+    ]
+}

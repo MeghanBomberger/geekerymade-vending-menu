@@ -1,0 +1,1309 @@
+{
+    setName: "additional symbols",
+    stamps: [
+        {
+            name: "anchor",
+            image: "anchor-stamp-4mm.svg",
+            value: "(anchor)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "bee",
+            image: "bee-stamp-4mm.svg",
+            value: "(bee)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "bird",
+            image: "bird-stamp-4mm.svg",
+            value: "(bird)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "comma",
+            image: "comma.svg",
+            value: "(comma)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "dagger",
+            image: "dagger-stamp-4mm.svg",
+            value: "(dagger)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "daisy",
+            image: "daisy.svg",
+            value: "(daisy)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "diamond",
+            image: "diamond-stamp-4mm.svg",
+            value: "(diamond)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "dollar",
+            image: "dollar.svg",
+            value: "(dollar)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "dragon",
+            image: "dragon-stamp-8mm.svg",
+            value: "(dragon)",
+            height: "8mm",
+            quarterInch: false
+        },{
+            name: "exclamation",
+            image: "exclamation.svg",
+            value: "(exclamation)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "fox",
+            image: "fox-stamp-4mm.svg",
+            value: "(fox)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "hashtag",
+            image: "hashtag.svg",
+            value: "(hashtag)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "heart",
+            image: "heart.svg",
+            value: "(heart)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "heart-semicolon",
+            image: "heart-semicolon-stamp-4mm.svg",
+            value: "(heart-semicolon)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "key",
+            image: "key-stamp-4mm.svg",
+            value: "(key)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "lotus",
+            image: "lotus-stamp-4mm.svg",
+            value: "(lotus)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "mermaid",
+            image: "mermaid-stamp-8mm.svg",
+            value: "(mermaid)",
+            height: "8mm",
+            quarterInch: false
+        },{
+            name: "mountain",
+            image: "mountain-stamp-4mm.svg",
+            value: "(mountain)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "parathenasis",
+            image: "parathenasis.svg",
+            value: "(parathenasis)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "peace-sign",
+            image: "peace-sign-stamp-4mm.svg",
+            value: "(peace-sign)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "period",
+            image: "period.svg",
+            value: "(period)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "question",
+            image: "question.svg",
+            value: "(question)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "smile",
+            image: "smile-stamp-4mm.svg",
+            value: "(smile)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "spiral",
+            image: "spiral-stamp-4mm.svg",
+            value: "(spiral)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "star",
+            image: "star-stamp-4mm.svg",
+            value: "(star)",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "unicorn",
+            image: "unicorn-stamp-8mm.svg",
+            value: "(unicorn)",
+            height: "8mm",
+            quarterInch: false
+        }
+    ]
+},{
+    setName: "arial",
+    stamps: [
+        {
+            name: "A",
+            image: "arial-A.svg",
+            value: "A",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "B",
+            image: "arial-B.svg",
+            value: "B",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "C",
+            image: "arial-C.svg",
+            value: "C",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "D",
+            image: "arial-D.svg",
+            value: "D",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "E",
+            image: "arial-E.svg",
+            value: "E",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "F",
+            image: "arial-F.svg",
+            value: "F",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "G",
+            image: "arial-G.svg",
+            value: "G",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "H",
+            image: "arial-H.svg",
+            value: "H",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "I",
+            image: "arial-I.svg",
+            value: "I",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "J",
+            image: "arial-J.svg",
+            value: "J",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "K",
+            image: "arial-K.svg",
+            value: "K",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "L",
+            image: "arial-L.svg",
+            value: "L",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "M",
+            image: "arial-M.svg",
+            value: "M",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "N",
+            image: "arial-N.svg",
+            value: "N",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "O",
+            image: "arial-O.svg",
+            value: "O",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "P",
+            image: "arial-P.svg",
+            value: "P",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Q",
+            image: "arial-Q.svg",
+            value: "Q",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "R",
+            image: "arial-R.svg",
+            value: "R",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "S",
+            image: "arial-S.svg",
+            value: "S",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "T",
+            image: "arial-T.svg",
+            value: "T",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "U",
+            image: "arial-U.svg",
+            value: "U",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "V",
+            image: "arial-V.svg",
+            value: "V",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "W",
+            image: "arial-W.svg",
+            value: "W",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "X",
+            image: "arial-X.svg",
+            value: "X",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Y",
+            image: "arial-Y.svg",
+            value: "Y",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Z",
+            image: "arial-Z.svg",
+            value: "Z",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "1",
+            image: "arial-1.svg",
+            value: "1",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "2",
+            image: "arial-2.svg",
+            value: "2",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "3",
+            image: "arial-3.svg",
+            value: "3",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "4",
+            image: "arial-4.svg",
+            value: "4",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "5",
+            image: "arial-5.svg",
+            value: "5",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "6",
+            image: "arial-6.svg",
+            value: "6",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "7",
+            image: "arial-7.svg",
+            value: "7",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "8",
+            image: "arial-8.svg",
+            value: "8",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "9",
+            image: "arial-9.svg",
+            value: "9",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "0",
+            image: "arial-0.svg",
+            value: "0",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "&",
+            image: "arial-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            quarterInch: true
+        }
+    ]
+},{
+    setName: "lollipop",
+    stamps: [
+        {
+            name: "A",
+            image: "lollipop-A.svg",
+            value: "A",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "B",
+            image: "lollipop-B.svg",
+            value: "B",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "C",
+            image: "lollipop-C.svg",
+            value: "C",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "D",
+            image: "lollipop-D.svg",
+            value: "D",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "E",
+            image: "lollipop-E.svg",
+            value: "E",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "F",
+            image: "lollipop-F.svg",
+            value: "F",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "G",
+            image: "lollipop-G.svg",
+            value: "G",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "H",
+            image: "lollipop-H.svg",
+            value: "H",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "I",
+            image: "lollipop-I.svg",
+            value: "I",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "J",
+            image: "lollipop-J.svg",
+            value: "J",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "K",
+            image: "lollipop-K.svg",
+            value: "K",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "L",
+            image: "lollipop-L.svg",
+            value: "L",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "M",
+            image: "lollipop-M.svg",
+            value: "M",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "N",
+            image: "lollipop-N.svg",
+            value: "N",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "O",
+            image: "lollipop-O.svg",
+            value: "O",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "P",
+            image: "lollipop-P.svg",
+            value: "P",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Q",
+            image: "lollipop-Q.svg",
+            value: "Q",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "R",
+            image: "lollipop-R.svg",
+            value: "R",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "S",
+            image: "lollipop-S.svg",
+            value: "S",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "T",
+            image: "lollipop-T.svg",
+            value: "T",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "U",
+            image: "lollipop-U.svg",
+            value: "U",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "V",
+            image: "lollipop-V.svg",
+            value: "V",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "W",
+            image: "lollipop-W.svg",
+            value: "W",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "X",
+            image: "lollipop-X.svg",
+            value: "X",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Y",
+            image: "lollipop-Y.svg",
+            value: "Y",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Z",
+            image: "lollipop-Z.svg",
+            value: "Z",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "&",
+            image: "lollipop-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            quarterInch: true
+        }
+    ]
+},{
+    setName: "runes",
+    stamps: [
+        {
+            name: "algiz",
+            image: "rune-algiz-z.svg",
+            value: "algiz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "ansuz",
+            image: "rune-ansuz-a.svg",
+            value: "ansuz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "berkana",
+            image: "rune-berkana-b.svg",
+            value: "berkana",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "dagaz",
+            image: "rune-dagaz-d.svg",
+            value: "dagaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "ehwaz",
+            image: "rune-ehwaz-e.svg",
+            value: "ehwaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "eiwaz",
+            image: "rune-eiwaz-i.svg",
+            value: "eiwaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "fehu",
+            image: "rune-fehu-f.svg",
+            value: "fehu",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "gebo",
+            image: "rune-gebo-g.svg",
+            value: "gebo",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "hagalaz",
+            image: "rune-hagalaz-h.svg",
+            value: "hagalaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "inguz",
+            image: "rune-inguz-n.svg",
+            value: "inguz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "inguz",
+            image: "rune-inguz-ng.svg",
+            value: "inguz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "isa",
+            image: "rune-isa-i.svg",
+            value: "isa",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "jera",
+            image: "rune-jera-j.svg",
+            value: "jera",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "kaunaz",
+            image: "rune-kaunaz-k.svg",
+            value: "kaunaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "laguz",
+            image: "rune-laguz-l.svg",
+            value: "laguz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "mannaz",
+            image: "rune-mannaz-m.svg",
+            value: "mannaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "naubiz",
+            image: "rune-naubiz-n.svg",
+            value: "naubiz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "opila",
+            image: "rune-opila-o.svg",
+            value: "opila",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "perp",
+            image: "rune-perp-p.svg",
+            value: "perp",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "purisaz",
+            image: "rune-purisaz-p.svg",
+            value: "purisaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "raipo",
+            image: "rune-raipo-r.svg",
+            value: "raipo",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "teiwaz",
+            image: "rune-teiwaz-t.svg",
+            value: "teiwaz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "uruz",
+            image: "rune-uruz-u.svg",
+            value: "uruz",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "wunjo",
+            image: "rune-wunjo-w.svg",
+            value: "wunjo",
+            height: "4mm",
+            quarterInch: true
+        }
+    ]
+},{
+    setName: "sailor",
+    stamps: [
+        {
+            name: "A",
+            image: "sailor-A.svg",
+            value: "A",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "B",
+            image: "sailor-B.svg",
+            value: "B",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "C",
+            image: "sailor-C.svg",
+            value: "C",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "D",
+            image: "sailor-D.svg",
+            value: "D",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "E",
+            image: "sailor-E.svg",
+            value: "E",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "F",
+            image: "sailor-F.svg",
+            value: "F",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "G",
+            image: "sailor-G.svg",
+            value: "G",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "H",
+            image: "sailor-H.svg",
+            value: "H",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "I",
+            image: "sailor-I.svg",
+            value: "I",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "J",
+            image: "sailor-J.svg",
+            value: "J",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "K",
+            image: "sailor-K.svg",
+            value: "K",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "L",
+            image: "sailor-L.svg",
+            value: "L",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "M",
+            image: "sailor-M.svg",
+            value: "M",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "N",
+            image: "sailor-N.svg",
+            value: "N",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "O",
+            image: "sailor-O.svg",
+            value: "O",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "P",
+            image: "sailor-P.svg",
+            value: "P",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Q",
+            image: "sailor-Q.svg",
+            value: "Q",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "R",
+            image: "sailor-R.svg",
+            value: "R",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "S",
+            image: "sailor-S.svg",
+            value: "S",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "T",
+            image: "sailor-T.svg",
+            value: "T",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "U",
+            image: "sailor-U.svg",
+            value: "U",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "V",
+            image: "sailor-V.svg",
+            value: "V",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "W",
+            image: "sailor-W.svg",
+            value: "W",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "X",
+            image: "sailor-X.svg",
+            value: "X",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Y",
+            image: "sailor-Y.svg",
+            value: "Y",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "Z",
+            image: "sailor-Z.svg",
+            value: "Z",
+            height: "4mm",
+            quarterInch: true
+        },{
+            name: "&",
+            image: "sailor-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            quarterInch: true
+        }
+    ]
+},{
+    setName: "typewriter",
+    stamps: [
+        {
+            name: "A",
+            image: "typewriter-uppercase-A.svg",
+            value: "A",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "B",
+            image: "typewriter-uppercase-B.svg",
+            value: "B",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "C",
+            image: "typewriter-uppercase-C.svg",
+            value: "C",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "D",
+            image: "typewriter-uppercase-D.svg",
+            value: "D",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "E",
+            image: "typewriter-uppercase-E.svg",
+            value: "E",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "F",
+            image: "typewriter-uppercase-F.svg",
+            value: "F",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "G",
+            image: "typewriter-uppercase-G.svg",
+            value: "G",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "H",
+            image: "typewriter-uppercase-H.svg",
+            value: "H",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "I",
+            image: "typewriter-uppercase-I.svg",
+            value: "I",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "J",
+            image: "typewriter-uppercase-J.svg",
+            value: "J",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "K",
+            image: "typewriter-uppercase-K.svg",
+            value: "K",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "L",
+            image: "typewriter-uppercase-L.svg",
+            value: "L",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "M",
+            image: "typewriter-uppercase-M.svg",
+            value: "M",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "N",
+            image: "typewriter-uppercase-N.svg",
+            value: "N",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "O",
+            image: "typewriter-uppercase-O.svg",
+            value: "O",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "P",
+            image: "typewriter-uppercase-P.svg",
+            value: "P",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "Q",
+            image: "typewriter-uppercase-Q.svg",
+            value: "Q",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "R",
+            image: "typewriter-uppercase-R.svg",
+            value: "R",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "S",
+            image: "typewriter-uppercase-S.svg",
+            value: "S",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "T",
+            image: "typewriter-uppercase-T.svg",
+            value: "T",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "U",
+            image: "typewriter-uppercase-U.svg",
+            value: "U",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "V",
+            image: "typewriter-uppercase-V.svg",
+            value: "V",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "W",
+            image: "typewriter-uppercase-W.svg",
+            value: "W",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "X",
+            image: "typewriter-uppercase-X.svg",
+            value: "X",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "Y",
+            image: "typewriter-uppercase-Y.svg",
+            value: "Y",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "Z",
+            image: "typewriter-uppercase-Z.svg",
+            value: "Z",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "a",
+            image: "typewriter-lowercase-a.svg",
+            value: "a",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "b",
+            image: "typewriter-lowercase-b.svg",
+            value: "b",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "c",
+            image: "typewriter-lowercase-c.svg",
+            value: "c",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "d",
+            image: "typewriter-lowercase-d.svg",
+            value: "d",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "e",
+            image: "typewriter-lowercase-e.svg",
+            value: "e",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "f",
+            image: "typewriter-lowercase-f.svg",
+            value: "f",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "g",
+            image: "typewriter-lowercase-g.svg",
+            value: "g",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "h",
+            image: "typewriter-lowercase-h.svg",
+            value: "h",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "i",
+            image: "typewriter-lowercase-i.svg",
+            value: "i",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "j",
+            image: "typewriter-lowercase-j.svg",
+            value: "j",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "k",
+            image: "typewriter-lowercase-k.svg",
+            value: "k",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "l",
+            image: "typewriter-lowercase-l.svg",
+            value: "l",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "m",
+            image: "typewriter-lowercase-m.svg",
+            value: "m",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "n",
+            image: "typewriter-lowercase-n.svg",
+            value: "n",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "o",
+            image: "typewriter-lowercase-o.svg",
+            value: "o",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "p",
+            image: "typewriter-lowercase-p.svg",
+            value: "p",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "q",
+            image: "typewriter-lowercase-q.svg",
+            value: "q",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "r",
+            image: "typewriter-lowercase-r.svg",
+            value: "r",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "s",
+            image: "typewriter-lowercase-s.svg",
+            value: "s",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "t",
+            image: "typewriter-lowercase-t.svg",
+            value: "t",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "u",
+            image: "typewriter-lowercase-u.svg",
+            value: "u",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "v",
+            image: "typewriter-lowercase-v.svg",
+            value: "v",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "w",
+            image: "typewriter-lowercase-w.svg",
+            value: "w",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "x",
+            image: "typewriter-lowercase-x.svg",
+            value: "x",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "y",
+            image: "typewriter-lowercase-y.svg",
+            value: "y",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "z",
+            image: "typewriter-lowercase-z.svg",
+            value: "z",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "&",
+            image: "typewriter-ampersand.svg",
+            value: "&",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "@",
+            image: "typewriter-at.svg",
+            value: "@",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "comma",
+            image: "typewriter-comma.svg",
+            value: "(comma)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "1",
+            image: "typewriter-one.svg",
+            value: "1",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "2",
+            image: "typewriter-two.svg",
+            value: "2",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "3",
+            image: "typewriter-three.svg",
+            value: "3",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "4",
+            image: "typewriter-four.svg",
+            value: "4",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "5",
+            image: "typewriter-five.svg",
+            value: "5",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "6",
+            image: "typewriter-six.svg",
+            value: "6",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "7",
+            image: "typewriter-seven.svg",
+            value: "7",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "8",
+            image: "typewriter-eight.svg",
+            value: "8",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "9",
+            image: "typewriter-nine.svg",
+            value: "9",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "0",
+            image: "typewriter-zero.svg",
+            value: "0",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "exclamation",
+            image: "typewriter-exclamation.svg",
+            value: "(exclamation)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "hashtag",
+            image: "typewriter-hashtag.svg",
+            value: "(hashtag)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "paranethasis",
+            image: "typewriter-paranethasis.svg",
+            value: "(paranethasis)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "period",
+            image: "typewriter-period.svg",
+            value: "(period)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "question",
+            image: "typewriter-question.svg",
+            value: "(question)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "quotation",
+            image: "typewriter-quotation.svg",
+            value: "(quotation)",
+            height: "3mm",
+            quarterInch: true
+        },{
+            name: "z",
+            image: "typewriter-.svg",
+            value: "z",
+            height: "3mm",
+            quarterInch: true
+        }
+    ]
+}

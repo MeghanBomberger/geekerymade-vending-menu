@@ -1,0 +1,228 @@
+{
+    setName: "arial",
+    stamps: [
+        {
+            name: "A",
+            image: "arial-A.svg",
+            value: "A",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "B",
+            image: "arial-B.svg",
+            value: "B",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "C",
+            image: "arial-C.svg",
+            value: "C",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "D",
+            image: "arial-D.svg",
+            value: "D",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "E",
+            image: "arial-E.svg",
+            value: "E",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "F",
+            image: "arial-F.svg",
+            value: "F",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "G",
+            image: "arial-G.svg",
+            value: "G",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "H",
+            image: "arial-H.svg",
+            value: "H",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "I",
+            image: "arial-I.svg",
+            value: "I",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "J",
+            image: "arial-J.svg",
+            value: "J",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "K",
+            image: "arial-K.svg",
+            value: "K",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "L",
+            image: "arial-L.svg",
+            value: "L",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "M",
+            image: "arial-M.svg",
+            value: "M",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "N",
+            image: "arial-N.svg",
+            value: "N",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "O",
+            image: "arial-O.svg",
+            value: "O",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "P",
+            image: "arial-P.svg",
+            value: "P",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Q",
+            image: "arial-Q.svg",
+            value: "Q",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "R",
+            image: "arial-R.svg",
+            value: "R",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "S",
+            image: "arial-S.svg",
+            value: "S",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "T",
+            image: "arial-T.svg",
+            value: "T",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "U",
+            image: "arial-U.svg",
+            value: "U",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "V",
+            image: "arial-V.svg",
+            value: "V",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "W",
+            image: "arial-W.svg",
+            value: "W",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "X",
+            image: "arial-X.svg",
+            value: "X",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Y",
+            image: "arial-Y.svg",
+            value: "Y",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Z",
+            image: "arial-Z.svg",
+            value: "Z",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "1",
+            image: "arial-1.svg",
+            value: "1",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "2",
+            image: "arial-2.svg",
+            value: "2",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "3",
+            image: "arial-3.svg",
+            value: "3",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "4",
+            image: "arial-4.svg",
+            value: "4",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "5",
+            image: "arial-5.svg",
+            value: "5",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "6",
+            image: "arial-6.svg",
+            value: "6",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "7",
+            image: "arial-7.svg",
+            value: "7",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "8",
+            image: "arial-8.svg",
+            value: "8",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "9",
+            image: "arial-9.svg",
+            value: "9",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "0",
+            image: "arial-0.svg",
+            value: "0",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "&",
+            image: "arial-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            halfInch: true
+        }
+    ]
+}

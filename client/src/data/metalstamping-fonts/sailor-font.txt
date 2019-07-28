@@ -1,0 +1,168 @@
+{
+    setName: "sailor",
+    stamps: [
+        {
+            name: "A",
+            image: "sailor-A.svg",
+            value: "A",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "B",
+            image: "sailor-B.svg",
+            value: "B",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "C",
+            image: "sailor-C.svg",
+            value: "C",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "D",
+            image: "sailor-D.svg",
+            value: "D",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "E",
+            image: "sailor-E.svg",
+            value: "E",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "F",
+            image: "sailor-F.svg",
+            value: "F",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "G",
+            image: "sailor-G.svg",
+            value: "G",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "H",
+            image: "sailor-H.svg",
+            value: "H",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "I",
+            image: "sailor-I.svg",
+            value: "I",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "J",
+            image: "sailor-J.svg",
+            value: "J",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "K",
+            image: "sailor-K.svg",
+            value: "K",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "L",
+            image: "sailor-L.svg",
+            value: "L",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "M",
+            image: "sailor-M.svg",
+            value: "M",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "N",
+            image: "sailor-N.svg",
+            value: "N",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "O",
+            image: "sailor-O.svg",
+            value: "O",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "P",
+            image: "sailor-P.svg",
+            value: "P",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Q",
+            image: "sailor-Q.svg",
+            value: "Q",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "R",
+            image: "sailor-R.svg",
+            value: "R",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "S",
+            image: "sailor-S.svg",
+            value: "S",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "T",
+            image: "sailor-T.svg",
+            value: "T",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "U",
+            image: "sailor-U.svg",
+            value: "U",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "V",
+            image: "sailor-V.svg",
+            value: "V",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "W",
+            image: "sailor-W.svg",
+            value: "W",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "X",
+            image: "sailor-X.svg",
+            value: "X",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Y",
+            image: "sailor-Y.svg",
+            value: "Y",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Z",
+            image: "sailor-Z.svg",
+            value: "Z",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "&",
+            image: "sailor-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            halfInch: true
+        }
+    ]
+}

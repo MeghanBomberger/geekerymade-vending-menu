@@ -1,0 +1,150 @@
+{
+    setName: "runes",
+    stamps: [
+        {
+            name: "algiz",
+            image: "rune-algiz-z.svg",
+            value: "algiz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "ansuz",
+            image: "rune-ansuz-a.svg",
+            value: "ansuz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "berkana",
+            image: "rune-berkana-b.svg",
+            value: "berkana",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "dagaz",
+            image: "rune-dagaz-d.svg",
+            value: "dagaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "ehwaz",
+            image: "rune-ehwaz-e.svg",
+            value: "ehwaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "eiwaz",
+            image: "rune-eiwaz-i.svg",
+            value: "eiwaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "fehu",
+            image: "rune-fehu-f.svg",
+            value: "fehu",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "gebo",
+            image: "rune-gebo-g.svg",
+            value: "gebo",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "hagalaz",
+            image: "rune-hagalaz-h.svg",
+            value: "hagalaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "inguz",
+            image: "rune-inguz-n.svg",
+            value: "inguz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "inguz",
+            image: "rune-inguz-ng.svg",
+            value: "inguz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "isa",
+            image: "rune-isa-i.svg",
+            value: "isa",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "jera",
+            image: "rune-jera-j.svg",
+            value: "jera",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "kaunaz",
+            image: "rune-kaunaz-k.svg",
+            value: "kaunaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "laguz",
+            image: "rune-laguz-l.svg",
+            value: "laguz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "mannaz",
+            image: "rune-mannaz-m.svg",
+            value: "mannaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "naubiz",
+            image: "rune-naubiz-n.svg",
+            value: "naubiz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "opila",
+            image: "rune-opila-o.svg",
+            value: "opila",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "perp",
+            image: "rune-perp-p.svg",
+            value: "perp",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "purisaz",
+            image: "rune-purisaz-p.svg",
+            value: "purisaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "raipo",
+            image: "rune-raipo-r.svg",
+            value: "raipo",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "teiwaz",
+            image: "rune-teiwaz-t.svg",
+            value: "teiwaz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "uruz",
+            image: "rune-uruz-u.svg",
+            value: "uruz",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "wunjo",
+            image: "rune-wunjo-w.svg",
+            value: "wunjo",
+            height: "4mm",
+            halfInch: true
+        }
+    ]
+}

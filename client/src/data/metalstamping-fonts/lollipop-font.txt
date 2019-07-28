@@ -1,0 +1,168 @@
+{
+    setName: "lollipop",
+    stamps: [
+        {
+            name: "A",
+            image: "lollipop-A.svg",
+            value: "A",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "B",
+            image: "lollipop-B.svg",
+            value: "B",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "C",
+            image: "lollipop-C.svg",
+            value: "C",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "D",
+            image: "lollipop-D.svg",
+            value: "D",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "E",
+            image: "lollipop-E.svg",
+            value: "E",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "F",
+            image: "lollipop-F.svg",
+            value: "F",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "G",
+            image: "lollipop-G.svg",
+            value: "G",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "H",
+            image: "lollipop-H.svg",
+            value: "H",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "I",
+            image: "lollipop-I.svg",
+            value: "I",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "J",
+            image: "lollipop-J.svg",
+            value: "J",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "K",
+            image: "lollipop-K.svg",
+            value: "K",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "L",
+            image: "lollipop-L.svg",
+            value: "L",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "M",
+            image: "lollipop-M.svg",
+            value: "M",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "N",
+            image: "lollipop-N.svg",
+            value: "N",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "O",
+            image: "lollipop-O.svg",
+            value: "O",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "P",
+            image: "lollipop-P.svg",
+            value: "P",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Q",
+            image: "lollipop-Q.svg",
+            value: "Q",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "R",
+            image: "lollipop-R.svg",
+            value: "R",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "S",
+            image: "lollipop-S.svg",
+            value: "S",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "T",
+            image: "lollipop-T.svg",
+            value: "T",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "U",
+            image: "lollipop-U.svg",
+            value: "U",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "V",
+            image: "lollipop-V.svg",
+            value: "V",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "W",
+            image: "lollipop-W.svg",
+            value: "W",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "X",
+            image: "lollipop-X.svg",
+            value: "X",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Y",
+            image: "lollipop-Y.svg",
+            value: "Y",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "Z",
+            image: "lollipop-Z.svg",
+            value: "Z",
+            height: "4mm",
+            halfInch: true
+        },{
+            name: "&",
+            image: "lollipop-ampersand.svg",
+            value: "&",
+            height: "4mm",
+            halfInch: true
+        }
+    ]
+}

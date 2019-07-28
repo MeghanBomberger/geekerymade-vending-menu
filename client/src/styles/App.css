@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Amatic+SC&display=swap');
+/* font-family: 'Abel', sans-serif; */
+/* font-family: 'Amatic SC', cursive; */
+
+body {
+    font-family: 'Abel', sans-serif;
+    font-size: 10pt;
+    background-color: rgb(143, 0, 187);
+}
+
+.page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 12.5vh 0 0 0;
+    max-height: 87.5vh;
+    overflow: hidden;
+}

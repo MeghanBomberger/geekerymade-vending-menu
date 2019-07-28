@@ -1,0 +1,438 @@
+{
+    setName: "typewriter",
+    stamps: [
+        {
+            name: "A",
+            image: "typewriter-uppercase-A.svg",
+            value: "A",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "B",
+            image: "typewriter-uppercase-B.svg",
+            value: "B",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "C",
+            image: "typewriter-uppercase-C.svg",
+            value: "C",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "D",
+            image: "typewriter-uppercase-D.svg",
+            value: "D",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "E",
+            image: "typewriter-uppercase-E.svg",
+            value: "E",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "F",
+            image: "typewriter-uppercase-F.svg",
+            value: "F",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "G",
+            image: "typewriter-uppercase-G.svg",
+            value: "G",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "H",
+            image: "typewriter-uppercase-H.svg",
+            value: "H",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "I",
+            image: "typewriter-uppercase-I.svg",
+            value: "I",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "J",
+            image: "typewriter-uppercase-J.svg",
+            value: "J",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "K",
+            image: "typewriter-uppercase-K.svg",
+            value: "K",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "L",
+            image: "typewriter-uppercase-L.svg",
+            value: "L",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "M",
+            image: "typewriter-uppercase-M.svg",
+            value: "M",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "N",
+            image: "typewriter-uppercase-N.svg",
+            value: "N",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "O",
+            image: "typewriter-uppercase-O.svg",
+            value: "O",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "P",
+            image: "typewriter-uppercase-P.svg",
+            value: "P",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "Q",
+            image: "typewriter-uppercase-Q.svg",
+            value: "Q",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "R",
+            image: "typewriter-uppercase-R.svg",
+            value: "R",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "S",
+            image: "typewriter-uppercase-S.svg",
+            value: "S",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "T",
+            image: "typewriter-uppercase-T.svg",
+            value: "T",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "U",
+            image: "typewriter-uppercase-U.svg",
+            value: "U",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "V",
+            image: "typewriter-uppercase-V.svg",
+            value: "V",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "W",
+            image: "typewriter-uppercase-W.svg",
+            value: "W",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "X",
+            image: "typewriter-uppercase-X.svg",
+            value: "X",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "Y",
+            image: "typewriter-uppercase-Y.svg",
+            value: "Y",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "Z",
+            image: "typewriter-uppercase-Z.svg",
+            value: "Z",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "a",
+            image: "typewriter-lowercase-a.svg",
+            value: "a",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "b",
+            image: "typewriter-lowercase-b.svg",
+            value: "b",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "c",
+            image: "typewriter-lowercase-c.svg",
+            value: "c",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "d",
+            image: "typewriter-lowercase-d.svg",
+            value: "d",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "e",
+            image: "typewriter-lowercase-e.svg",
+            value: "e",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "f",
+            image: "typewriter-lowercase-f.svg",
+            value: "f",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "g",
+            image: "typewriter-lowercase-g.svg",
+            value: "g",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "h",
+            image: "typewriter-lowercase-h.svg",
+            value: "h",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "i",
+            image: "typewriter-lowercase-i.svg",
+            value: "i",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "j",
+            image: "typewriter-lowercase-j.svg",
+            value: "j",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "k",
+            image: "typewriter-lowercase-k.svg",
+            value: "k",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "l",
+            image: "typewriter-lowercase-l.svg",
+            value: "l",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "m",
+            image: "typewriter-lowercase-m.svg",
+            value: "m",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "n",
+            image: "typewriter-lowercase-n.svg",
+            value: "n",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "o",
+            image: "typewriter-lowercase-o.svg",
+            value: "o",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "p",
+            image: "typewriter-lowercase-p.svg",
+            value: "p",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "q",
+            image: "typewriter-lowercase-q.svg",
+            value: "q",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "r",
+            image: "typewriter-lowercase-r.svg",
+            value: "r",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "s",
+            image: "typewriter-lowercase-s.svg",
+            value: "s",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "t",
+            image: "typewriter-lowercase-t.svg",
+            value: "t",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "u",
+            image: "typewriter-lowercase-u.svg",
+            value: "u",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "v",
+            image: "typewriter-lowercase-v.svg",
+            value: "v",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "w",
+            image: "typewriter-lowercase-w.svg",
+            value: "w",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "x",
+            image: "typewriter-lowercase-x.svg",
+            value: "x",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "y",
+            image: "typewriter-lowercase-y.svg",
+            value: "y",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "z",
+            image: "typewriter-lowercase-z.svg",
+            value: "z",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "&",
+            image: "typewriter-ampersand.svg",
+            value: "&",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "@",
+            image: "typewriter-at.svg",
+            value: "@",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "comma",
+            image: "typewriter-comma.svg",
+            value: "(comma)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "1",
+            image: "typewriter-one.svg",
+            value: "1",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "2",
+            image: "typewriter-two.svg",
+            value: "2",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "3",
+            image: "typewriter-three.svg",
+            value: "3",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "4",
+            image: "typewriter-four.svg",
+            value: "4",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "5",
+            image: "typewriter-five.svg",
+            value: "5",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "6",
+            image: "typewriter-six.svg",
+            value: "6",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "7",
+            image: "typewriter-seven.svg",
+            value: "7",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "8",
+            image: "typewriter-eight.svg",
+            value: "8",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "9",
+            image: "typewriter-nine.svg",
+            value: "9",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "0",
+            image: "typewriter-zero.svg",
+            value: "0",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "exclamation",
+            image: "typewriter-exclamation.svg",
+            value: "(exclamation)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "hashtag",
+            image: "typewriter-hashtag.svg",
+            value: "(hashtag)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "paranethasis",
+            image: "typewriter-paranethasis.svg",
+            value: "(paranethasis)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "period",
+            image: "typewriter-period.svg",
+            value: "(period)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "question",
+            image: "typewriter-question.svg",
+            value: "(question)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "quotation",
+            image: "typewriter-quotation.svg",
+            value: "(quotation)",
+            height: "3mm",
+            halfInch: true
+        },{
+            name: "z",
+            image: "typewriter-.svg",
+            value: "z",
+            height: "3mm",
+            halfInch: true
+        }
+    ]
+}
