@@ -1693,6 +1693,9 @@ const Bracelets = () => {
             setRowOneList(rowOneList.slice(0,-1))
         } else if (rowTwo === true) {
             setRowTwoList(rowTwoList.slice(0, -1))
+            if (rowTwoList.length === 0) {
+                setRowTwo(false)
+            }
         }
     }
 
@@ -1702,6 +1705,7 @@ const Bracelets = () => {
         setStampImageList([])
         setRowOneList([])
         setRowTwoList([])
+        setRowTwo(false)
     }
 
     const handleStartCommission = () => {
@@ -1719,107 +1723,127 @@ const Bracelets = () => {
 
     return (
         <main className="bracelets-page page">
-            <form className="bracelet-form" onSubmit={handleSubmit}>
-                <h2>Pick a bracelet size</h2>
-                <div className="bracelet-width-options">
-                    <label>
-                        <input name="braceletWidth" type="radio" value={0.25} onChange={(e) => setBraceletWidth(e.target.value)} />
-                        <span>1/4" wide</span>
-                    </label>
-                    <label>
-                        <input name="braceletWidth" type="radio" value={0.5} onChange={(e) => setBraceletWidth(e.target.value)}/>
-                        <span>1/2" wide</span>
-                    </label>
-                </div>
-                <div className="demo-container">
-                    <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
-                    <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
-                    <div className="bracelet-demo" style={braceletDemoStyle}>
-                        <div className="row-one">{mapDemo1}</div>
-                        {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
-                    </div>
-                    <div className="remaining-char">
-                        {   braceletWidth == 0.25
-                                ? <h3>{40 - (phrase.length)}</h3>
-                                : <h3>{80 - (phrase.length)}</h3>
-                        }
-                        <p>characters remaining</p>
-                    </div>
-                </div>
-                <div className="stamp-controls-container">
-                    <div className="stamp-set-tabs">
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("arial-font")}
-                        >
-                            Gothic Arial
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("lollipop-font")}
-                        >
-                            Lollipop
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("sailor-font")}
-                        >
-                            Hey Sailor
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("typewriter-font")}
-                        >
-                            Typewriter
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("runes-font")}
-                        >
-                            Futhark Runes
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("additional-symbols")}
-                        >
-                            Symbols
-                        </button>
-                    </div>
-                    {mapStampKeys}
-                    <div className="phrase-controls">
-                        <div 
-                            className="clear-all"
-                            onClick={handleClearAllClick}
-                        >
-                            <p>Clear All</p>
-                        </div>
-                        <div 
-                            className="back-space"
-                            onClick={handleBackSpaceClick}
-                        >
-                            <p>Backspace</p>
-                        </div>
-                        <div 
-                            className="space-bar"
-                            onClick={handleAddSpaceClick}
-                        >
-                            <p>Space</p>
-                        </div>
-                        <div 
-                            className="return"
-                            onClick={handleReturnClick}
-                        >
-                            <p>Return</p>
-                        </div>
-                        <div 
-                            className="commission"
-                            onClick={handleStartCommission}
-                        >
-                            <p>Commission</p>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            {
+                commisionStarted
+                    ?   <form className="bracelet-form">
+                            <div className="demo-container">
+                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
+                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
+                                <div className="bracelet-demo" style={braceletDemoStyle}>
+                                    <div className="row-one">{mapDemo1}</div>
+                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
+                                </div>
+                                <div className="remaining-char">
+                                    {   braceletWidth == 0.25
+                                            ? <h3>{40 - (phrase.length)}</h3>
+                                            : <h3>{80 - (phrase.length)}</h3>
+                                    }
+                                    <p>characters remaining</p>
+                                </div>
+                            </div>
+                        </form>
+                    :   <form className="bracelet-form" onSubmit={handleSubmit}>
+                            <h2>Pick a bracelet size</h2>
+                            <div className="bracelet-width-options">
+                                <label>
+                                    <input name="braceletWidth" type="radio" value={0.25} onChange={(e) => setBraceletWidth(e.target.value)} />
+                                    <span>1/4" wide</span>
+                                </label>
+                                <label>
+                                    <input name="braceletWidth" type="radio" value={0.5} onChange={(e) => setBraceletWidth(e.target.value)}/>
+                                    <span>1/2" wide</span>
+                                </label>
+                            </div>
+                            <div className="demo-container">
+                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
+                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
+                                <div className="bracelet-demo" style={braceletDemoStyle}>
+                                    <div className="row-one">{mapDemo1}</div>
+                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
+                                </div>
+                                <div className="remaining-char">
+                                    {   braceletWidth == 0.25
+                                            ? <h3>{40 - (phrase.length)}</h3>
+                                            : <h3>{80 - (phrase.length)}</h3>
+                                    }
+                                    <p>characters remaining</p>
+                                </div>
+                            </div>
+                            <div className="stamp-controls-container">
+                                <div className="stamp-set-tabs">
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("arial-font")}
+                                    >
+                                        Gothic Arial
+                                    </button>
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("lollipop-font")}
+                                    >
+                                        Lollipop
+                                    </button>
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("sailor-font")}
+                                    >
+                                        Hey Sailor
+                                    </button>
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("typewriter-font")}
+                                    >
+                                        Typewriter
+                                    </button>
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("runes-font")}
+                                    >
+                                        Futhark Runes
+                                    </button>
+                                    <button 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("additional-symbols")}
+                                    >
+                                        Symbols
+                                    </button>
+                                </div>
+                                {mapStampKeys}
+                                <div className="phrase-controls">
+                                    <div 
+                                        className="clear-all"
+                                        onClick={handleClearAllClick}
+                                    >
+                                        <p>Clear All</p>
+                                    </div>
+                                    <div 
+                                        className="back-space"
+                                        onClick={handleBackSpaceClick}
+                                    >
+                                        <p>Backspace</p>
+                                    </div>
+                                    <div 
+                                        className="space-bar"
+                                        onClick={handleAddSpaceClick}
+                                    >
+                                        <p>Space</p>
+                                    </div>
+                                    <div 
+                                        className="return"
+                                        onClick={handleReturnClick}
+                                    >
+                                        <p>Return</p>
+                                    </div>
+                                    <div 
+                                        className="commission"
+                                        onClick={handleStartCommission}
+                                    >
+                                        <p>Commission</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+            }
             <p className="additional-stamps-note">Additional large unicorn, mermaid, and dragon stamps available on 1/2" size only</p>
             <p className="disclaimer">This is just an approximation of the end design. The final product is handmade and may have minor differences from the digital demo.</p>
         </main>
