@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import '../styles/Bracelets.css'
 import anchorstamp4mm from "../images/metalstamps/anchor-stamp-4mm.svg"
@@ -9,7 +9,6 @@ import daggerstamp4mm from "../images/metalstamps/dagger-stamp-4mm.svg"
 import daisy from "../images/metalstamps/daisy.svg"
 import diamondstamp4mm from "../images/metalstamps/diamond-stamp-4mm.svg"
 import dollar from "../images/metalstamps/dollar.svg"
-import dragonstamp8mm from "../images/metalstamps/dragon-stamp-8mm.svg"
 import exclamation from "../images/metalstamps/exclamation.svg"
 import foxstamp4mm from "../images/metalstamps/fox-stamp-4mm.svg"
 import hashtag from "../images/metalstamps/hashtag.svg"
@@ -17,7 +16,6 @@ import heart from "../images/metalstamps/heart.svg"
 import heartsemicolonstamp4mm from "../images/metalstamps/heart-semicolon-stamp-4mm.svg"
 import keystamp4mm from "../images/metalstamps/key-stamp-4mm.svg"
 import lotusstamp4mm from "../images/metalstamps/lotus-stamp-4mm.svg"
-import mermaidstamp8mm from "../images/metalstamps/mermaid-stamp-8mm.svg"
 import mountainstamp4mm from "../images/metalstamps/mountain-stamp-4mm.svg"
 import parathenasis from "../images/metalstamps/parathenasis.svg"
 import peacesignstamp4mm from "../images/metalstamps/peace-sign-stamp-4mm.svg"
@@ -26,7 +24,6 @@ import question from "../images/metalstamps/question.svg"
 import smilestamp4mm from "../images/metalstamps/smile-stamp-4mm.svg"
 import spiralstamp4mm from "../images/metalstamps/spiral-stamp-4mm.svg"
 import starstamp4mm from "../images/metalstamps/star-stamp-4mm.svg"
-import unicornstamp8mm from "../images/metalstamps/unicorn-stamp-8mm.svg"
 import arialA from "../images/metalstamps/arial-A.svg"
 import arialB from "../images/metalstamps/arial-B.svg"
 import arialC from "../images/metalstamps/arial-C.svg"
@@ -222,13 +219,9 @@ const Bracelets = () => {
     const [stampImageList, setStampImageList] = useState([])
     const [rowTwo, setRowTwo] = useState(false)
     const [rowTwoSplitIndex, setRowTwoSplitIndex] = useState(0)
-    const [rowOneLength, setRowOneLength] = useState(0)
-    const [rowTwoLength, setRowTwoLength] = useState(0)
-    const [rowOneBuffer, setRowOneBuffer] = useState(0)
-    const [rowTwoBuffer, setRowTwoBuffer] = useState(0)
-    const [rowOneStartMargin, setRowOneStartMargin] = useState(0)
-    const [rowTwoStartMargin, setRowTwoStartMargin] = useState(0)
-    const [commissionStarted, setCommisionStarted] = useState(false)
+    const [rowOneList, setRowOneList] = useState([])
+    const [rowTwoList, setRowTwoList] = useState([])
+    const [commisionStarted, setCommissionStarted] = useState(false)
 
     const braceletBlankData = [
         {
@@ -412,24 +405,6 @@ const Bracelets = () => {
                     value: "(key)",
                     height: "4mm",
                     quarterInch: true
-                },{
-                    name: "dragon",
-                    image: dragonstamp8mm,
-                    value: "(dragon)",
-                    height: "8mm",
-                    quarterInch: false
-                },{
-                    name: "mermaid",
-                    image: mermaidstamp8mm,
-                    value: "(mermaid)",
-                    height: "8mm",
-                    quarterInch: false
-                },{
-                    name: "unicorn",
-                    image: unicornstamp8mm,
-                    value: "(unicorn)",
-                    height: "8mm",
-                    quarterInch: false
                 }
             ]
         },{
@@ -1642,33 +1617,24 @@ const Bracelets = () => {
         }
     })
 
-    useEffect(() => {
-        const phraseLength = phrase.length
-        const splitpoint = rowTwoSplitIndex
-        const newRowOneLength = rowTwo ? splitpoint : phraseLength
-        const newRowTwoLength = rowTwo ? phraseLength - splitpoint : 0
-        const newRowOneBuffer = 40 - rowOneLength
-        const newRowTwoBuffer = 40 - rowTwoLength
-        const newRowOneStartMargin = rowOneBuffer % 2 === 0 ? rowOneBuffer / 2 : (rowOneBuffer / 2) - 0.5
-        const newRowTwoStartMargin = rowTwoBuffer % 2 === 0 ? rowTwoBuffer / 2 : (rowTwoBuffer / 2) - 0.5
-        setRowOneLength(newRowOneLength)
-        setRowTwoLength(newRowTwoLength)
-        setRowOneBuffer(newRowOneBuffer)
-        setRowTwoBuffer(newRowTwoBuffer)
-        setRowOneStartMargin(newRowOneStartMargin)
-        setRowTwoStartMargin(newRowTwoStartMargin)
-    },[stampImageList])
-
-    const mapDemo = stampImageList.map((image, i) => {
+    const mapDemo1 = rowOneList.map((image, i) => {
         const stampStyle = {
             backgroundImage: `url(${image.imageName})`,
             height: "calc(1.5vw)",
-            width: "1.6vw",
-            gridRow: image.row,
-            // gridColumn: findColumnPosition()
+            width: "1.6vw"
         }
 
         return  <div className="demo-phrase-stamp" style={stampStyle}></div>
+    })
+
+    const mapDemo2 = rowTwoList.map((image, i) => {
+        const stampStyle = {
+            backgroundImage: `url(${image.imageName})`,
+            height: "calc(1.5vw)",
+            width: "1.6vw"
+        }
+
+        return <div className="demo-phrase-stamp" style={stampStyle}></div>
     })
 
     const handleStampKeyClick = (value) => {
@@ -1676,6 +1642,11 @@ const Bracelets = () => {
             setPhrase([...phrase, value.name])
             setAnnotatedPhrase([...annotatedPhrase, value.annotatedName])
             setStampImageList([...stampImageList, {imageName: value.image, row: 2}])
+            if (rowTwo === false) {
+                setRowOneList([...rowOneList, {imageName: value.image, row: 1}])
+            } else if (rowTwo === true) {
+                setRowTwoList([...rowTwoList, {imageName: value.image, row: 2}])
+            }
         } else if (braceletWidth == 0.5 && phrase.length < 80) {
             if (phrase.length == 39) {
                 setRowTwo(true)
@@ -1683,6 +1654,11 @@ const Bracelets = () => {
             setPhrase([...phrase, value.name])
             setAnnotatedPhrase([...annotatedPhrase, value.annotatedName])
             setStampImageList([...stampImageList, {imageName: value.image, row: rowTwo ? 3 : 2}])
+            if (rowTwo === false) {
+                setRowOneList([...rowOneList, {imageName: value.image, row: 1}])
+            } else if (rowTwo === true) {
+                setRowTwoList([...rowTwoList, {imageName: value.image, row: 2}])
+            }
         } else { 
             alert("Max character limit reached")
         }
@@ -1692,6 +1668,11 @@ const Bracelets = () => {
         setPhrase([...phrase, " "])
         setAnnotatedPhrase([...annotatedPhrase, "(space)"])
         setStampImageList([...stampImageList, {imageName: "(space)", row: 2}])
+        if (rowTwo === false) {
+            setRowOneList([...rowOneList, {imageName: "(space)", row: 1}])
+        } else if (rowTwo === true) {
+            setRowTwoList([...rowTwoList, {imageName: "(space)", row: 2}])
+        }
     }
 
     const handleReturnClick = () => {
@@ -1708,21 +1689,33 @@ const Bracelets = () => {
         setPhrase(phrase.slice(0, -1))
         setAnnotatedPhrase(annotatedPhrase.slice(0, -1))
         setStampImageList(stampImageList.slice(0, -1))
+        if (rowTwo === false) {
+            setRowOneList(rowOneList.slice(0,-1))
+        } else if (rowTwo === true) {
+            setRowTwoList(rowTwoList.slice(0, -1))
+        }
     }
 
     const handleClearAllClick = () => {
         setPhrase([])
         setAnnotatedPhrase([])
         setStampImageList([])
+        setRowOneList([])
+        setRowTwoList([])
     }
 
     const handleStartCommission = () => {
-        setCommisionStarted(true)
+        setCommissionStarted(true)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+
+    console.log("Row 1:")
+    console.log(rowOneList)
+    console.log("Row 2:")
+    console.log(rowTwoList)
 
     return (
         <main className="bracelets-page page">
@@ -1742,7 +1735,8 @@ const Bracelets = () => {
                     <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
                     <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
                     <div className="bracelet-demo" style={braceletDemoStyle}>
-                        {mapDemo}
+                        <div className="row-one">{mapDemo1}</div>
+                        {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
                     </div>
                     <div className="remaining-char">
                         {   braceletWidth == 0.25
@@ -1826,6 +1820,7 @@ const Bracelets = () => {
                     </div>
                 </div>
             </form>
+            <p className="additional-stamps-note">Additional large unicorn, mermaid, and dragon stamps available on 1/2" size only</p>
             <p className="disclaimer">This is just an approximation of the end design. The final product is handmade and may have minor differences from the digital demo.</p>
         </main>
     )
