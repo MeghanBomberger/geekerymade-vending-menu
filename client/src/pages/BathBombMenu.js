@@ -1,4 +1,7 @@
 import React from 'react'
+import Airtable from 'airtable'
+import 'dotenv' from 'dotenv'
+
 
 import '../styles/BathBombMenu.css'
 
