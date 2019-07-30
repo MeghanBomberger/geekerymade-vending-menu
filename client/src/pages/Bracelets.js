@@ -1703,7 +1703,7 @@ const Bracelets = () => {
             customerNote: customerNote,
             braceletWidth: `${braceletWidth}`,
             priceEach: priceEach,
-            quantity: quantity,
+            quantity: parseInt(quantity),
             phrase: phrase.join(""),
             annotatedPhrase: annotatedPhrase.join(" "),
             rowOneList: JSON.stringify(rowOneList),
@@ -1719,25 +1719,23 @@ const Bracelets = () => {
             console.log(record.getId())
         })
 
-        // setVisibleStampSet("arial-font")
-        // setBraceletWidth(0.25)
-        // setPhrase([])
-        // setAnnotatedPhrase([])
-        // setStampImageList([])
-        // setRowTwo(false)
-        // setRowTwoSplitIndex(0)
-        // setRowOneList([])
-        // setRowTwoList([])
-        // setCommissionStarted(false)
-        // setCustomerName("")
-        // setCustomerPhone("")
-        // setCustomerNote("")
-        // setPriceEach(10)
-        // setQuantity(1)
+        setVisibleStampSet("arial-font")
+        setBraceletWidth(0.25)
+        setPhrase([])
+        setAnnotatedPhrase([])
+        setStampImageList([])
+        setRowTwo(false)
+        setRowTwoSplitIndex(0)
+        setRowOneList([])
+        setRowTwoList([])
+        setCommissionStarted(false)
+        setCustomerName("")
+        setCustomerPhone("")
+        setCustomerNote("")
+        setPriceEach(10)
+        setQuantity(1)
 
     }
-
-    console.log(Number.isInteger(quantity))
 
     return (
         <main className="bracelets-page page">
@@ -1776,7 +1774,7 @@ const Bracelets = () => {
                                 </label>
                                 <label>
                                     <span>How many do you want made?</span>
-                                    <input name="quantity" type="number" value={quantity} autoComplete="new-password" onChange={(e) => setQuantity(e.target.value)} />
+                                    <input name="quantity" type="number" onChange={(e) => setQuantity(e.target.value)} />
                                 </label>
                                 <button type="submit">Submit Commission</button>
                                 <p className="subtotal">Your bracelet will be: ${priceEach * quantity}</p>
