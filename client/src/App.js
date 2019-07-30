@@ -6,6 +6,7 @@ import './styles/App.css'
 import Footer from './components/Footer.js'
 import Header from './components/Header.js'
 import Bracelets from './pages/Bracelets.js'
+import CrochetCharacter from './pages/CrochetCharacter.js'
 import Landing from './pages/Landing.js'
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <Router>
                 <Landing path="/" />
                 <Bracelets path="/bracelets" />
+                <CrochetCharacter path="/custom-character" />
             </Router>
             {/* <Footer /> */}
         </div>

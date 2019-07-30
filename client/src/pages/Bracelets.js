@@ -231,12 +231,13 @@ const Bracelets = () => {
     const [rowTwoSplitIndex, setRowTwoSplitIndex] = useState(0)
     const [rowOneList, setRowOneList] = useState([])
     const [rowTwoList, setRowTwoList] = useState([])
-    const [commisionStarted, setCommissionStarted] = useState(false)
+    const [commissionStarted, setCommissionStarted] = useState(false)
     const [customerName, setCustomerName] = useState("")
     const [customerPhone, setCustomerPhone] = useState("")
     const [customerNote, setCustomerNote] = useState("")
     const [priceEach, setPriceEach] = useState(10)
     const [quantity, setQuantity] = useState(1)
+    const [commissionSubmitted, setCommissionSubmited] = useState(false)
     
     const stampSetsData = [ 
         {
@@ -1728,60 +1729,27 @@ const Bracelets = () => {
         setRowTwoSplitIndex(0)
         setRowOneList([])
         setRowTwoList([])
-        setCommissionStarted(false)
+        // setCommissionStarted(false)
         setCustomerName("")
         setCustomerPhone("")
         setCustomerNote("")
         setPriceEach(10)
         setQuantity(1)
 
+        setCommissionSubmited(true)
+
+    }
+
+    const handleNewDesignReset = () => {
+        setCommissionStarted(false)
+        setCommissionSubmited(false)
     }
 
     return (
         <main className="bracelets-page page">
-            {
-                commisionStarted
-
-                    ?   <form className="bracelet-form" onSubmit={handleSubmit}>
-                            <div className="demo-container">
-                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
-                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
-                                <div className="bracelet-demo" style={braceletDemoStyle}>
-                                    <div className="row-one">{mapDemo1}</div>
-                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
-                                </div>
-                                <div className="remaining-char">
-                                    {   braceletWidth == 0.25
-                                            ? <h3>{40 - (phrase.length)}</h3>
-                                            : <h3>{80 - (phrase.length)}</h3>
-                                    }
-                                    <p>characters remaining</p>
-                                </div>
-                            </div>
-                            <div className="make-changes" onClick={handleMakeChanges}>Make Changes to Your Design</div>
-                            <div className="customer-info">
-                                <label>
-                                    <span>Your Name: </span>
-                                    <input name="customerName" type="text" value={customerName} autoComplete="new-password" onChange={(e) => setCustomerName(e.target.value)} />
-                                </label>
-                                <label>
-                                    <span>Phone Number: </span>
-                                    <input name="customerPhone" type="number" value={customerPhone} autoComplete="new-password" onChange={(e) => setCustomerPhone(e.target.value)} />
-                                </label>
-                                <label>
-                                    <span>Additional Notes</span>
-                                    <input name="customerNote" type="text" value={customerNote} autoComplete="new-password" onChange={(e) => setCustomerNote(e.target.value)} />
-                                </label>
-                                <label>
-                                    <span>How many do you want made?</span>
-                                    <input name="quantity" type="number" onChange={(e) => setQuantity(e.target.value)} />
-                                </label>
-                                <button type="submit">Submit Commission</button>
-                                <p className="subtotal">Your bracelet will be: ${priceEach * quantity}</p>
-                            </div>
-                        </form>
-
-                    :   <form className="bracelet-form" onSubmit={handleSubmit}>
+        {
+                !commissionStarted
+                    ? <form className="bracelet-form" onSubmit={handleSubmit}>
                             <div className="bracelet-width-options">                            
                                 <h2>Pick a bracelet size:</h2>
                                 <label>
@@ -1882,8 +1850,69 @@ const Bracelets = () => {
                                 </div>
                             </div>
                         </form>
+                    :   <></>
             }
-            <p className="additional-stamps-note">Additional large unicorn, mermaid, and dragon stamps available on 1/2" size only</p>
+
+            {   
+                commissionStarted
+                    ? <></>
+                    : <p className="additional-stamps-note">Additional large unicorn, mermaid, and dragon stamps available on 1/2" size only</p>
+            }
+
+            {
+                commissionStarted && !commissionSubmitted
+                    ?   <form className="bracelet-form" onSubmit={handleSubmit}>
+                            <div className="demo-container">
+                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
+                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
+                                <div className="bracelet-demo" style={braceletDemoStyle}>
+                                    <div className="row-one">{mapDemo1}</div>
+                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
+                                </div>
+                                <div className="remaining-char">
+                                    {   braceletWidth == 0.25
+                                            ? <h3>{40 - (phrase.length)}</h3>
+                                            : <h3>{80 - (phrase.length)}</h3>
+                                    }
+                                    <p>characters remaining</p>
+                                </div>
+                            </div>
+                            <div className="make-changes" onClick={handleMakeChanges}>Make Changes to Your Design</div>
+                            <div className="customer-info">
+                                <label>
+                                    <span>Your Name: </span>
+                                    <input name="customerName" type="text" value={customerName} autoComplete="new-password" onChange={(e) => setCustomerName(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Phone Number: </span>
+                                    <input name="customerPhone" type="number" value={customerPhone} autoComplete="new-password" onChange={(e) => setCustomerPhone(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Additional Notes</span>
+                                    <input name="customerNote" type="text" value={customerNote} autoComplete="new-password" onChange={(e) => setCustomerNote(e.target.value)} />
+                                </label>
+                                <label className="quantity" >
+                                    <span>How many of this bracelet design do you want made?</span>
+                                    <input name="quantity" type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                                </label>
+                                <button type="submit">Submit Commission</button>
+                                <p className="subtotal">Your bracelet will be: ${priceEach * quantity}</p>
+                            </div>
+                        </form>
+                    :   <></>
+            }
+
+            {
+                commissionStarted && commissionSubmitted
+                    ?   <div className="commission-confirmation">
+                            <h1>You commission request has been added to the queue!</h1>
+                            <p>We will text you as soon as it is ready for pick up. Please pay the booth attendant at this time.</p>
+                            <h1>Thank you!</h1>
+                            <div className="new-design-button" onClick={handleNewDesignReset}>Start a New Design</div>
+                        </div>
+                    :   <></>
+            }
+            
             <p className="disclaimer">This is just an approximation of the end design. The final product is handmade and may have minor differences from the digital demo.</p>
         </main>
     )
