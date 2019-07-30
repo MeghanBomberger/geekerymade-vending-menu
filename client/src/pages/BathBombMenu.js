@@ -2,7 +2,6 @@ import React from 'react'
 import Airtable from 'airtable'
 import 'dotenv' from 'dotenv'
 
-
 import '../styles/BathBombMenu.css'
 
 const BathBombMenu = () => {
@@ -52,4 +51,3 @@ export default BathBombMenu
             // bakery
             // woodsy
             // beachy
-

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Airtable from 'airtable'
+import dotenv from 'dotenv'
 
 import '../styles/Bracelets.css'
 import anchorstamp4mm from "../images/metalstamps/anchor-stamp-4mm.svg"
@@ -9,7 +11,6 @@ import daggerstamp4mm from "../images/metalstamps/dagger-stamp-4mm.svg"
 import daisy from "../images/metalstamps/daisy.svg"
 import diamondstamp4mm from "../images/metalstamps/diamond-stamp-4mm.svg"
 import dollar from "../images/metalstamps/dollar.svg"
-import dragonstamp8mm from "../images/metalstamps/dragon-stamp-8mm.svg"
 import exclamation from "../images/metalstamps/exclamation.svg"
 import foxstamp4mm from "../images/metalstamps/fox-stamp-4mm.svg"
 import hashtag from "../images/metalstamps/hashtag.svg"
@@ -17,7 +18,6 @@ import heart from "../images/metalstamps/heart.svg"
 import heartsemicolonstamp4mm from "../images/metalstamps/heart-semicolon-stamp-4mm.svg"
 import keystamp4mm from "../images/metalstamps/key-stamp-4mm.svg"
 import lotusstamp4mm from "../images/metalstamps/lotus-stamp-4mm.svg"
-import mermaidstamp8mm from "../images/metalstamps/mermaid-stamp-8mm.svg"
 import mountainstamp4mm from "../images/metalstamps/mountain-stamp-4mm.svg"
 import parathenasis from "../images/metalstamps/parathenasis.svg"
 import peacesignstamp4mm from "../images/metalstamps/peace-sign-stamp-4mm.svg"
@@ -26,7 +26,6 @@ import question from "../images/metalstamps/question.svg"
 import smilestamp4mm from "../images/metalstamps/smile-stamp-4mm.svg"
 import spiralstamp4mm from "../images/metalstamps/spiral-stamp-4mm.svg"
 import starstamp4mm from "../images/metalstamps/star-stamp-4mm.svg"
-import unicornstamp8mm from "../images/metalstamps/unicorn-stamp-8mm.svg"
 import arialA from "../images/metalstamps/arial-A.svg"
 import arialB from "../images/metalstamps/arial-B.svg"
 import arialC from "../images/metalstamps/arial-C.svg"
@@ -214,6 +213,14 @@ import typewriterperiod from "../images/metalstamps/typewriter-period.svg"
 import typewriterquestion from "../images/metalstamps/typewriter-question.svg"
 import typewriterquotation from "../images/metalstamps/typewriter-quotation.svg"
 
+require('dotenv').config()
+
+Airtable.configure({
+    apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}`
+})
+
+const base = Airtable.base(`${process.env.REACT_APP_AIRTABLE_BASE_KEY_COMMISSIONS}`)
+
 const Bracelets = () => {
     const [visibleStampSet, setVisibleStampSet] = useState("arial-font")
     const [braceletWidth, setBraceletWidth] = useState(0.25)
@@ -222,53 +229,16 @@ const Bracelets = () => {
     const [stampImageList, setStampImageList] = useState([])
     const [rowTwo, setRowTwo] = useState(false)
     const [rowTwoSplitIndex, setRowTwoSplitIndex] = useState(0)
-    const [rowOneLength, setRowOneLength] = useState(0)
-    const [rowTwoLength, setRowTwoLength] = useState(0)
-    const [rowOneBuffer, setRowOneBuffer] = useState(0)
-    const [rowTwoBuffer, setRowTwoBuffer] = useState(0)
-    const [rowOneStartMargin, setRowOneStartMargin] = useState(0)
-    const [rowTwoStartMargin, setRowTwoStartMargin] = useState(0)
-    const [commissionStarted, setCommisionStarted] = useState(false)
-
-    const braceletBlankData = [
-        {
-            name: "aluminum-1/4",
-            width: `1/4"`,
-            metal: "aluminum",
-            availability: true,
-            price: 10.00,
-        },{
-            name: "aluminum-1/2",
-            width: `1/2"`,
-            metal: "aluminum",
-            availability: true,
-            price: 15.00,
-        },{
-            name: "brass-1/4",
-            width: `1/4"`,
-            metal: "brass",
-            availability: false,
-            price: 10.00,
-        },{
-            name: "brass-1/2",
-            width: `1/2"`,
-            metal: "aluminum",
-            availability: false,
-            price: 15.00,
-        },{
-            name: "copper-1/4",
-            width: `1/4"`,
-            metal: "copper",
-            availability: false,
-            price: 10.00,
-        },{
-            name: "copper-1/2",
-            width: `1/2"`,
-            metal: "copper",
-            availability: false,
-            price: 15.00,
-        }
-    ]
+    const [rowOneList, setRowOneList] = useState([])
+    const [rowTwoList, setRowTwoList] = useState([])
+    const [commissionStarted, setCommissionStarted] = useState(false)
+    const [customerName, setCustomerName] = useState("")
+    const [customerPhone, setCustomerPhone] = useState("")
+    const [customerNote, setCustomerNote] = useState("")
+    const [priceEach, setPriceEach] = useState(10)
+    const [quantity, setQuantity] = useState(1)
+    const [commissionSubmitted, setCommissionSubmited] = useState(false)
+    
     const stampSetsData = [ 
         {
             setName: "additional-symbols",
@@ -412,24 +382,6 @@ const Bracelets = () => {
                     value: "(key)",
                     height: "4mm",
                     quarterInch: true
-                },{
-                    name: "dragon",
-                    image: dragonstamp8mm,
-                    value: "(dragon)",
-                    height: "8mm",
-                    quarterInch: false
-                },{
-                    name: "mermaid",
-                    image: mermaidstamp8mm,
-                    value: "(mermaid)",
-                    height: "8mm",
-                    quarterInch: false
-                },{
-                    name: "unicorn",
-                    image: unicornstamp8mm,
-                    value: "(unicorn)",
-                    height: "8mm",
-                    quarterInch: false
                 }
             ]
         },{
@@ -1642,33 +1594,24 @@ const Bracelets = () => {
         }
     })
 
-    useEffect(() => {
-        const phraseLength = phrase.length
-        const splitpoint = rowTwoSplitIndex
-        const newRowOneLength = rowTwo ? splitpoint : phraseLength
-        const newRowTwoLength = rowTwo ? phraseLength - splitpoint : 0
-        const newRowOneBuffer = 40 - rowOneLength
-        const newRowTwoBuffer = 40 - rowTwoLength
-        const newRowOneStartMargin = rowOneBuffer % 2 === 0 ? rowOneBuffer / 2 : (rowOneBuffer / 2) - 0.5
-        const newRowTwoStartMargin = rowTwoBuffer % 2 === 0 ? rowTwoBuffer / 2 : (rowTwoBuffer / 2) - 0.5
-        setRowOneLength(newRowOneLength)
-        setRowTwoLength(newRowTwoLength)
-        setRowOneBuffer(newRowOneBuffer)
-        setRowTwoBuffer(newRowTwoBuffer)
-        setRowOneStartMargin(newRowOneStartMargin)
-        setRowTwoStartMargin(newRowTwoStartMargin)
-    },[stampImageList])
-
-    const mapDemo = stampImageList.map((image, i) => {
+    const mapDemo1 = rowOneList.map((image, i) => {
         const stampStyle = {
             backgroundImage: `url(${image.imageName})`,
             height: "calc(1.5vw)",
-            width: "1.6vw",
-            gridRow: image.row,
-            // gridColumn: findColumnPosition()
+            width: "1.6vw"
         }
 
         return  <div className="demo-phrase-stamp" style={stampStyle}></div>
+    })
+
+    const mapDemo2 = rowTwoList.map((image, i) => {
+        const stampStyle = {
+            backgroundImage: `url(${image.imageName})`,
+            height: "calc(1.5vw)",
+            width: "1.6vw"
+        }
+
+        return <div className="demo-phrase-stamp" style={stampStyle}></div>
     })
 
     const handleStampKeyClick = (value) => {
@@ -1676,13 +1619,23 @@ const Bracelets = () => {
             setPhrase([...phrase, value.name])
             setAnnotatedPhrase([...annotatedPhrase, value.annotatedName])
             setStampImageList([...stampImageList, {imageName: value.image, row: 2}])
-        } else if (braceletWidth == 0.5 && phrase.length < 80) {
+            if (rowTwo === false) {
+                setRowOneList([...rowOneList, {imageName: value.image, row: 1}])
+            } else if (rowTwo === true) {
+                setRowTwoList([...rowTwoList, {imageName: value.image, row: 2}])
+            }
+        } else if (braceletWidth == 0.50 && phrase.length < 80) {
             if (phrase.length == 39) {
                 setRowTwo(true)
             }
             setPhrase([...phrase, value.name])
             setAnnotatedPhrase([...annotatedPhrase, value.annotatedName])
             setStampImageList([...stampImageList, {imageName: value.image, row: rowTwo ? 3 : 2}])
+            if (rowTwo === false) {
+                setRowOneList([...rowOneList, {imageName: value.image, row: 1}])
+            } else if (rowTwo === true) {
+                setRowTwoList([...rowTwoList, {imageName: value.image, row: 2}])
+            }
         } else { 
             alert("Max character limit reached")
         }
@@ -1692,11 +1645,17 @@ const Bracelets = () => {
         setPhrase([...phrase, " "])
         setAnnotatedPhrase([...annotatedPhrase, "(space)"])
         setStampImageList([...stampImageList, {imageName: "(space)", row: 2}])
+        if (rowTwo === false) {
+            setRowOneList([...rowOneList, {imageName: "(space)", row: 1}])
+        } else if (rowTwo === true) {
+            setRowTwoList([...rowTwoList, {imageName: "(space)", row: 2}])
+        }
     }
 
     const handleReturnClick = () => {
-        if (braceletWidth == 0.5) {
+        if (braceletWidth == 0.50) {
             setRowTwo(true)
+            setPhrase(" (return) ")
             setRowTwoSplitIndex(stampImageList.length)
             setAnnotatedPhrase([...annotatedPhrase, "(return)"])
         } else {
@@ -1708,124 +1667,252 @@ const Bracelets = () => {
         setPhrase(phrase.slice(0, -1))
         setAnnotatedPhrase(annotatedPhrase.slice(0, -1))
         setStampImageList(stampImageList.slice(0, -1))
+        if (rowTwo === false) {
+            setRowOneList(rowOneList.slice(0,-1))
+        } else if (rowTwo === true) {
+            setRowTwoList(rowTwoList.slice(0, -1))
+            if (rowTwoList.length === 0) {
+                setRowTwo(false)
+            }
+        }
     }
 
     const handleClearAllClick = () => {
         setPhrase([])
         setAnnotatedPhrase([])
         setStampImageList([])
+        setRowOneList([])
+        setRowTwoList([])
+        setRowTwo(false)
     }
 
     const handleStartCommission = () => {
-        setCommisionStarted(true)
+        setCommissionStarted(true)
+        braceletWidth == 0.25 ? setPriceEach(10) : setPriceEach(15)
+    }
+
+    const handleMakeChanges = () => {
+        setCommissionStarted(false)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        base('custom-bracelets').create({
+            customerName: customerName,
+            customerPhone: customerPhone,
+            customerNote: customerNote,
+            braceletWidth: `${braceletWidth}`,
+            priceEach: priceEach,
+            quantity: parseInt(quantity),
+            phrase: phrase.join(""),
+            annotatedPhrase: annotatedPhrase.join(" "),
+            rowOneList: JSON.stringify(rowOneList),
+            rowTwoList: JSON.stringify(rowTwoList),
+            status: "queue",
+            paid: false
+        }, function(err, record) {
+            if (err) {
+                console.log(err)
+                alert("An error has occured, please ask booth attendant for further assistance.")
+                return
+            }
+            console.log(record.getId())
+        })
+
+        setVisibleStampSet("arial-font")
+        setBraceletWidth(0.25)
+        setPhrase([])
+        setAnnotatedPhrase([])
+        setStampImageList([])
+        setRowTwo(false)
+        setRowTwoSplitIndex(0)
+        setRowOneList([])
+        setRowTwoList([])
+        // setCommissionStarted(false)
+        setCustomerName("")
+        setCustomerPhone("")
+        setCustomerNote("")
+        setPriceEach(10)
+        setQuantity(1)
+
+        setCommissionSubmited(true)
+
+    }
+
+    const handleNewDesignReset = () => {
+        setCommissionStarted(false)
+        setCommissionSubmited(false)
     }
 
     return (
         <main className="bracelets-page page">
-            <form className="bracelet-form" onSubmit={handleSubmit}>
-                <h2>Pick a bracelet size</h2>
-                <div className="bracelet-width-options">
-                    <label>
-                        <input name="braceletWidth" type="radio" value={0.25} onChange={(e) => setBraceletWidth(e.target.value)} />
-                        <span>1/4" wide</span>
-                    </label>
-                    <label>
-                        <input name="braceletWidth" type="radio" value={0.5} onChange={(e) => setBraceletWidth(e.target.value)}/>
-                        <span>1/2" wide</span>
-                    </label>
-                </div>
-                <div className="demo-container">
-                    <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
-                    <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
-                    <div className="bracelet-demo" style={braceletDemoStyle}>
-                        {mapDemo}
-                    </div>
-                    <div className="remaining-char">
-                        {   braceletWidth == 0.25
-                                ? <h3>{40 - (phrase.length)}</h3>
-                                : <h3>{80 - (phrase.length)}</h3>
-                        }
-                        <p>characters remaining</p>
-                    </div>
-                </div>
-                <div className="stamp-controls-container">
-                    <div className="stamp-set-tabs">
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("arial-font")}
-                        >
-                            Gothic Arial
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("lollipop-font")}
-                        >
-                            Lollipop
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("sailor-font")}
-                        >
-                            Hey Sailor
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("typewriter-font")}
-                        >
-                            Typewriter
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("runes-font")}
-                        >
-                            Futhark Runes
-                        </button>
-                        <button 
-                            className="tab" 
-                            onClick={() => setVisibleStampSet("additional-symbols")}
-                        >
-                            Symbols
-                        </button>
-                    </div>
-                    {mapStampKeys}
-                    <div className="phrase-controls">
-                        <div 
-                            className="clear-all"
-                            onClick={handleClearAllClick}
-                        >
-                            <p>Clear All</p>
+        {
+                !commissionStarted
+                    ? <form className="bracelet-form" onSubmit={handleSubmit}>
+                            <div className="bracelet-width-options">                            
+                                <h2>Pick a bracelet size:</h2>
+                                <label>
+                                    <input name="braceletWidth" type="radio" value={0.25} onChange={(e) => setBraceletWidth(e.target.value)} />
+                                    <span>1/4" wide</span>
+                                </label>
+                                <label>
+                                    <input name="braceletWidth" type="radio" value={0.50} onChange={(e) => setBraceletWidth(e.target.value)}/>
+                                    <span>1/2" wide</span>
+                                </label>
+                            </div>
+                            <div className="demo-container">
+                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
+                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
+                                <div className="bracelet-demo" style={braceletDemoStyle}>
+                                    <div className="row-one">{mapDemo1}</div>
+                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
+                                </div>
+                                <div className="remaining-char">
+                                    {   braceletWidth == 0.25
+                                            ? <h3>{40 - (phrase.length)}</h3>
+                                            : <h3>{80 - (phrase.length)}</h3>
+                                    }
+                                    <p>characters remaining</p>
+                                </div>
+                            </div>
+                            <div className="stamp-controls-container">
+                                <div className="stamp-set-tabs">
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("arial-font")}
+                                    >
+                                        Gothic Arial
+                                    </div>
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("lollipop-font")}
+                                    >
+                                        Lollipop
+                                    </div>
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("sailor-font")}
+                                    >
+                                        Hey Sailor
+                                    </div>
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("typewriter-font")}
+                                    >
+                                        Typewriter
+                                    </div>
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("runes-font")}
+                                    >
+                                        Futhark Runes
+                                    </div>
+                                    <div 
+                                        className="tab" 
+                                        onClick={() => setVisibleStampSet("additional-symbols")}
+                                    >
+                                        Symbols
+                                    </div>
+                                </div>
+                                {mapStampKeys}
+                                <div className="phrase-controls">
+                                    <div 
+                                        className="clear-all"
+                                        onClick={handleClearAllClick}
+                                    >
+                                        <p>Clear All</p>
+                                    </div>
+                                    <div 
+                                        className="back-space"
+                                        onClick={handleBackSpaceClick}
+                                    >
+                                        <p>Backspace</p>
+                                    </div>
+                                    <div 
+                                        className="space-bar"
+                                        onClick={handleAddSpaceClick}
+                                    >
+                                        <p>Space</p>
+                                    </div>
+                                    <div 
+                                        className="return"
+                                        onClick={handleReturnClick}
+                                    >
+                                        <p>Return</p>
+                                    </div>
+                                    <div 
+                                        className="commission"
+                                        onClick={handleStartCommission}
+                                    >
+                                        <p>Commission</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    :   <></>
+            }
+
+            {   
+                commissionStarted
+                    ? <></>
+                    : <p className="additional-stamps-note">Additional large unicorn, mermaid, and dragon stamps available on 1/2" size only</p>
+            }
+
+            {
+                commissionStarted && !commissionSubmitted
+                    ?   <form className="bracelet-form" onSubmit={handleSubmit}>
+                            <div className="demo-container">
+                                <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
+                                <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
+                                <div className="bracelet-demo" style={braceletDemoStyle}>
+                                    <div className="row-one">{mapDemo1}</div>
+                                    {rowTwoList.length !== 0 ? <div className="row-two">{mapDemo2}</div> : <></>}
+                                </div>
+                                <div className="remaining-char">
+                                    {   braceletWidth == 0.25
+                                            ? <h3>{40 - (phrase.length)}</h3>
+                                            : <h3>{80 - (phrase.length)}</h3>
+                                    }
+                                    <p>characters remaining</p>
+                                </div>
+                            </div>
+                            <div className="make-changes" onClick={handleMakeChanges}>Make Changes to Your Design</div>
+                            <div className="customer-info">
+                                <label>
+                                    <span>Your Name: </span>
+                                    <input name="customerName" type="text" value={customerName} autoComplete="new-password" onChange={(e) => setCustomerName(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Phone Number: </span>
+                                    <input name="customerPhone" type="number" value={customerPhone} autoComplete="new-password" onChange={(e) => setCustomerPhone(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Additional Notes</span>
+                                    <input name="customerNote" type="text" value={customerNote} autoComplete="new-password" onChange={(e) => setCustomerNote(e.target.value)} />
+                                </label>
+                                <label className="quantity" >
+                                    <span>How many of this bracelet design do you want made?</span>
+                                    <input name="quantity" type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                                </label>
+                                <button type="submit">Submit Commission</button>
+                                <p className="subtotal">Your bracelet will be: ${priceEach * quantity}</p>
+                            </div>
+                        </form>
+                    :   <></>
+            }
+
+            {
+                commissionStarted && commissionSubmitted
+                    ?   <div className="commission-confirmation">
+                            <h1>You commission request has been added to the queue!</h1>
+                            <p>We will text you as soon as it is ready for pick up. Please pay the booth attendant at this time.</p>
+                            <h1>Thank you!</h1>
+                            <div className="new-design-button" onClick={handleNewDesignReset}>Start a New Design</div>
                         </div>
-                        <div 
-                            className="back-space"
-                            onClick={handleBackSpaceClick}
-                        >
-                            <p>Backspace</p>
-                        </div>
-                        <div 
-                            className="space-bar"
-                            onClick={handleAddSpaceClick}
-                        >
-                            <p>Space</p>
-                        </div>
-                        <div 
-                            className="return"
-                            onClick={handleReturnClick}
-                        >
-                            <p>Return</p>
-                        </div>
-                        <div 
-                            className="commission"
-                            onClick={handleStartCommission}
-                        >
-                            <p>Commission</p>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                    :   <></>
+            }
+            
             <p className="disclaimer">This is just an approximation of the end design. The final product is handmade and may have minor differences from the digital demo.</p>
         </main>
     )

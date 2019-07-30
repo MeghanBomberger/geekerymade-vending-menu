@@ -3,9 +3,10 @@ import { Router } from '@reach/router'
 
 
 import './styles/App.css'
-import Footer from './components/Footer.js'
 import Header from './components/Header.js'
+import BathBombMenu from './pages/BathBombMenu.js'
 import Bracelets from './pages/Bracelets.js'
+import CrochetCharacter from './pages/CrochetCharacter.js'
 import Landing from './pages/Landing.js'
 
 const App = () => {
@@ -14,9 +15,10 @@ const App = () => {
             <Header />
             <Router>
                 <Landing path="/" />
+                <BathBombMenu path="/bathbomb-menu" />
                 <Bracelets path="/bracelets" />
+                <CrochetCharacter path="/custom-character" />
             </Router>
-            {/* <Footer /> */}
         </div>
     )
 }

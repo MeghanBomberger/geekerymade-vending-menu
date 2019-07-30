@@ -1,0 +1,38 @@
+.bathbombmenu-page {
+    position: fixed;
+    top: 14vh;
+    bottom: -1.3vh;
+    left: 3vw;
+    right: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bathbomb-card-list {
+    width: 94vw;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.bathbomb-card-list > .bathbomb-card {
+    height: calc(18vw);
+    width: 18vw;
+    margin: 0 2.75vw 5.5vh 2.75vw;
+    background-color: red;
+}
+
+.bathbomb-card-list::-webkit-scrollbar {
+    width: 0;
+}
+ 
+.bathbomb-card-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.bathbomb-card-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
