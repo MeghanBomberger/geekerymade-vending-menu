@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Airtable from 'airtable'
+import dotenv from 'dotenv'
 
 import '../styles/Bracelets.css'
 import anchorstamp4mm from "../images/metalstamps/anchor-stamp-4mm.svg"
@@ -211,6 +213,14 @@ import typewriterperiod from "../images/metalstamps/typewriter-period.svg"
 import typewriterquestion from "../images/metalstamps/typewriter-question.svg"
 import typewriterquotation from "../images/metalstamps/typewriter-quotation.svg"
 
+require('dotenv').config()
+
+Airtable.configure({
+    apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}`
+})
+
+const base = Airtable.base(`${process.env.REACT_APP_AIRTABLE_BASE_KEY_COMMISSIONS}`)
+
 const Bracelets = () => {
     const [visibleStampSet, setVisibleStampSet] = useState("arial-font")
     const [braceletWidth, setBraceletWidth] = useState(0.25)
@@ -222,46 +232,12 @@ const Bracelets = () => {
     const [rowOneList, setRowOneList] = useState([])
     const [rowTwoList, setRowTwoList] = useState([])
     const [commisionStarted, setCommissionStarted] = useState(false)
-
-    const braceletBlankData = [
-        {
-            name: "aluminum-1/4",
-            width: `1/4"`,
-            metal: "aluminum",
-            availability: true,
-            price: 10.00,
-        },{
-            name: "aluminum-1/2",
-            width: `1/2"`,
-            metal: "aluminum",
-            availability: true,
-            price: 15.00,
-        },{
-            name: "brass-1/4",
-            width: `1/4"`,
-            metal: "brass",
-            availability: false,
-            price: 10.00,
-        },{
-            name: "brass-1/2",
-            width: `1/2"`,
-            metal: "aluminum",
-            availability: false,
-            price: 15.00,
-        },{
-            name: "copper-1/4",
-            width: `1/4"`,
-            metal: "copper",
-            availability: false,
-            price: 10.00,
-        },{
-            name: "copper-1/2",
-            width: `1/2"`,
-            metal: "copper",
-            availability: false,
-            price: 15.00,
-        }
-    ]
+    const [customerName, setCustomerName] = useState("")
+    const [customerPhone, setCustomerPhone] = useState("")
+    const [customerNote, setCustomerNote] = useState("")
+    const [priceEach, setPriceEach] = useState(10)
+    const [quantity, setQuantity] = useState(1)
+    
     const stampSetsData = [ 
         {
             setName: "additional-symbols",
@@ -1647,7 +1623,7 @@ const Bracelets = () => {
             } else if (rowTwo === true) {
                 setRowTwoList([...rowTwoList, {imageName: value.image, row: 2}])
             }
-        } else if (braceletWidth == 0.5 && phrase.length < 80) {
+        } else if (braceletWidth == 0.50 && phrase.length < 80) {
             if (phrase.length == 39) {
                 setRowTwo(true)
             }
@@ -1676,8 +1652,9 @@ const Bracelets = () => {
     }
 
     const handleReturnClick = () => {
-        if (braceletWidth == 0.5) {
+        if (braceletWidth == 0.50) {
             setRowTwo(true)
+            setPhrase(" (return) ")
             setRowTwoSplitIndex(stampImageList.length)
             setAnnotatedPhrase([...annotatedPhrase, "(return)"])
         } else {
@@ -1710,22 +1687,64 @@ const Bracelets = () => {
 
     const handleStartCommission = () => {
         setCommissionStarted(true)
+        braceletWidth == 0.25 ? setPriceEach(10) : setPriceEach(15)
+    }
+
+    const handleMakeChanges = () => {
+        setCommissionStarted(false)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        base('custom-bracelets').create({
+            customerName: customerName,
+            customerPhone: customerPhone,
+            customerNote: customerNote,
+            braceletWidth: `${braceletWidth}`,
+            priceEach: priceEach,
+            quantity: quantity,
+            phrase: phrase.join(""),
+            annotatedPhrase: annotatedPhrase.join(" "),
+            rowOneList: JSON.stringify(rowOneList),
+            rowTwoList: JSON.stringify(rowTwoList),
+            status: "queue",
+            paid: false
+        }, function(err, record) {
+            if (err) {
+                console.log(err)
+                alert("An error has occured, please ask booth attendant for further assistance.")
+                return
+            }
+            console.log(record.getId())
+        })
+
+        // setVisibleStampSet("arial-font")
+        // setBraceletWidth(0.25)
+        // setPhrase([])
+        // setAnnotatedPhrase([])
+        // setStampImageList([])
+        // setRowTwo(false)
+        // setRowTwoSplitIndex(0)
+        // setRowOneList([])
+        // setRowTwoList([])
+        // setCommissionStarted(false)
+        // setCustomerName("")
+        // setCustomerPhone("")
+        // setCustomerNote("")
+        // setPriceEach(10)
+        // setQuantity(1)
+
     }
 
-    console.log("Row 1:")
-    console.log(rowOneList)
-    console.log("Row 2:")
-    console.log(rowTwoList)
+    console.log(Number.isInteger(quantity))
 
     return (
         <main className="bracelets-page page">
             {
                 commisionStarted
-                    ?   <form className="bracelet-form">
+
+                    ?   <form className="bracelet-form" onSubmit={handleSubmit}>
                             <div className="demo-container">
                                 <span>{braceletWidth == 0.25 ? `1/4"` : `1/2"`}</span>
                                 <div className="bracket-left" style={{fontSize: `calc(${braceletWidth * 13.667}vw)`}}>{`{`}</div>
@@ -1741,16 +1760,38 @@ const Bracelets = () => {
                                     <p>characters remaining</p>
                                 </div>
                             </div>
+                            <div className="make-changes" onClick={handleMakeChanges}>Make Changes to Your Design</div>
+                            <div className="customer-info">
+                                <label>
+                                    <span>Your Name: </span>
+                                    <input name="customerName" type="text" value={customerName} autoComplete="new-password" onChange={(e) => setCustomerName(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Phone Number: </span>
+                                    <input name="customerPhone" type="number" value={customerPhone} autoComplete="new-password" onChange={(e) => setCustomerPhone(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>Additional Notes</span>
+                                    <input name="customerNote" type="text" value={customerNote} autoComplete="new-password" onChange={(e) => setCustomerNote(e.target.value)} />
+                                </label>
+                                <label>
+                                    <span>How many do you want made?</span>
+                                    <input name="quantity" type="number" value={quantity} autoComplete="new-password" onChange={(e) => setQuantity(e.target.value)} />
+                                </label>
+                                <button type="submit">Submit Commission</button>
+                                <p className="subtotal">Your bracelet will be: ${priceEach * quantity}</p>
+                            </div>
                         </form>
+
                     :   <form className="bracelet-form" onSubmit={handleSubmit}>
-                            <h2>Pick a bracelet size</h2>
-                            <div className="bracelet-width-options">
+                            <div className="bracelet-width-options">                            
+                                <h2>Pick a bracelet size:</h2>
                                 <label>
                                     <input name="braceletWidth" type="radio" value={0.25} onChange={(e) => setBraceletWidth(e.target.value)} />
                                     <span>1/4" wide</span>
                                 </label>
                                 <label>
-                                    <input name="braceletWidth" type="radio" value={0.5} onChange={(e) => setBraceletWidth(e.target.value)}/>
+                                    <input name="braceletWidth" type="radio" value={0.50} onChange={(e) => setBraceletWidth(e.target.value)}/>
                                     <span>1/2" wide</span>
                                 </label>
                             </div>
@@ -1771,42 +1812,42 @@ const Bracelets = () => {
                             </div>
                             <div className="stamp-controls-container">
                                 <div className="stamp-set-tabs">
-                                    <button 
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("arial-font")}
                                     >
                                         Gothic Arial
-                                    </button>
-                                    <button 
+                                    </div>
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("lollipop-font")}
                                     >
                                         Lollipop
-                                    </button>
-                                    <button 
+                                    </div>
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("sailor-font")}
                                     >
                                         Hey Sailor
-                                    </button>
-                                    <button 
+                                    </div>
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("typewriter-font")}
                                     >
                                         Typewriter
-                                    </button>
-                                    <button 
+                                    </div>
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("runes-font")}
                                     >
                                         Futhark Runes
-                                    </button>
-                                    <button 
+                                    </div>
+                                    <div 
                                         className="tab" 
                                         onClick={() => setVisibleStampSet("additional-symbols")}
                                     >
                                         Symbols
-                                    </button>
+                                    </div>
                                 </div>
                                 {mapStampKeys}
                                 <div className="phrase-controls">
