@@ -67,15 +67,19 @@ const BathBombMenu = () => {
                     id: record.fields.id,
                     productName: record.fields.productName,
                     shape: record.fields.moldShapeName,
+                    moldingMethod: record.fields.moldingMethod,
                     weight: `${record.fields.weightInOz}oz`,
                     baseColors: [record.fields.baseColor1Name, record.fields.baseColor2Name],
                     embedType: embedType,
                     colorEmbedData: colorEmbedData,
-                    prizeEmbedData: record.fields.prizeEmbed,
+                    prizeEmbedData: {
+                        prizeCategory: record.fields.prizeType,
+                        prizeDescription: record.fields.prizeDescription,
+                        prizeImage: record.fields.prizeImage
+                    },
                     scentNotesList: record.fields.scentDescription,
                     tags: tagsList,
-                    designOverlay: record.fields.designOverlay,
-                    moldingMethod: record.fields.moldingMethod
+                    designOverlay: record.fields.designOverlay
                 }
 
                 setBathBombData([...bathBombData, newBathBomb])
