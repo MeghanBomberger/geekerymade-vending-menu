@@ -73,7 +73,7 @@ const CrochetCharacter = () => {
                         onChange={(e) => setCustomerPhone(e.target.value)}
                     />
                 </label>
-                <button type="submit">Submit Commission Request</button>
+                <button className="submit-button" type="submit">Submit Commission Request</button>
             </form>
             <div className="gallery">
                 <div className="character alice" style={characterStyle(Alice)}></div>
