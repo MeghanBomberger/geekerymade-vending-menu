@@ -17,7 +17,7 @@ const Header = () => {
                 />
             </Link>
             <Link to="/custom-character" className="section-link" >Get a Crochet Character</Link>
-            <Link to="/demos" className="section-link" >App Demos</Link>
+            <Link to="/stitchkey-demo" className="section-link" >StitchKey Demo</Link>
         </header>
     )
 }

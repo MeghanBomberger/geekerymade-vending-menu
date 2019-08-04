@@ -8,6 +8,7 @@ import BathBombMenu from './pages/BathBombMenu.js'
 import Bracelets from './pages/Bracelets.js'
 import CrochetCharacter from './pages/CrochetCharacter.js'
 import Landing from './pages/Landing.js'
+import StitchKeyDemo from './pages/StitchKeyDemo.js'
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                 <BathBombMenu path="/bathbomb-menu" />
                 <Bracelets path="/bracelets" />
                 <CrochetCharacter path="/custom-character" />
+                <StitchKeyDemo path="/stitchkey-demo" />
             </Router>
         </div>
     )

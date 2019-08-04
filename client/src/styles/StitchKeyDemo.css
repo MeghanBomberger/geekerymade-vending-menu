@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.app-demo-page {
+    margin: 12vh 0 0 0;
+}
+
+.phone-frame {
+    position: fixed;
+    bottom: 0;
+    right: 28vw;
+    height: 85vh;
+    filter: drop-shadow(rgba(255, 255, 255, 0.75) 1px 1px 25px);
+    z-index: 2;
+}
+
+.screen-container {
+    position: fixed;
+    bottom: 2.35vh;
+    top: 23.8vh;
+    left: 37.7vw;
+    right: 37.8vw;
+    background: linear-gradient(#DB05FD, #8E44FD, #02B6FD);
+}
+
+.left-panel {
+    position: fixed;
+    top: 12vh;
+    bottom: 3vh;
+    right: 68vw;
+    left: 2vw;
+}
+
+.right-panel {
+    position: fixed;
+    top: 12vh;
+    bottom: 3vh;
+    right: 2vw;
+    left: 72vw;
+}
+
+.demo-screen {
+    height: 73.85vh;
+    width: 24.5vw;
+}
+
+.screen-container > .loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-container > .loading-screen > .stitch-key-logo {
+    height: 30vh;
+    margin: 0 0 5vh 0;
+    align-self: center;
+    justify-self: center;
+    filter: opacity(60%);
+}
+
+.left-panel > .loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-panel > .loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-container > .dashboard-screen > .dashboard-header {
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5vw 0 0.5vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.dashboard-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #02b6fd;
+    margin: 0 0.5vw 0 0;
+}
+
+.dashboard-nav-container > img {
+    height: 3vh;
+    margin: 0 0.75vw 0 0.75vw;
+    filter: drop-shadow(rgba(0, 0, 0, 0.603) 1px 1px 5px);
+}
+
+.dashboard-nav-container > .menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.4vh 0.5vw 0 0.5vw;
+}
+
+.dashboard-nav-container > .menu-icon > .menu-icon-bar {
+    height: 0.4vh;
+    width: 1.4vw;
+    background-color: #02b6fd;
+    margin: 0 0 0.5vh 0;
+}
