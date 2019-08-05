@@ -7,15 +7,20 @@ import checkboxIcon from "../images/stitchkeydemo/checkbox.svg"
 import checklistIcon from "../images/stitchkeydemo/checkboxes.svg"
 import emailIcon from "../images/stitchkeydemo/email-icon.svg"
 import phoneFrame from "../images/stitchkeydemo/phone-frame.svg"
+import phoneFrame2 from "../images/stitchkeydemo/phone-frame-2.svg"
 import projectIcon from "../images/stitchkeydemo/canister.svg"
 import stitchKeyLogo from "../images/stitchkeydemo/stitchkeylogo1.svg"
 import stitchKeyLogo1 from "../images/stitchkeydemo/stitchkeylogo2.svg"
 import writeIcon from "../images/stitchkeydemo/quest.svg"
 import yarnIcon from "../images/stitchkeydemo/yarn.svg"
-import weepingAngel from "../images/characters/weepingangel.jpg"
+import alice from "../images/characters/alice.jpg"
+import belle from "../images/characters/belle.jpg"
 import dorthy from "../images/characters/dorthy.jpg"
+import garnet from "../images/characters/garnet.jpg"
+import hekapoo from "../images/characters/hekapoo.jpg"
 import motherOfDragons from "../images/characters/motherofdragons.jpg"
-
+import rosequartz from "../images/characters/rosequartz.jpg"
+import weepingAngel from "../images/characters/weepingangel.jpg"
 
 const DemoHeader = () => {
     return (
@@ -50,8 +55,61 @@ const DemoFooter = (props) => {
 }
 
 const StitchKeyDemo = () => {
-    const [currentScreen, setCurrentScreen] = useState("reader")
+    const [currentScreen, setCurrentScreen] = useState("reader-dorthy")
     const [demoFooterToggle, setDemoFooterToggle] = useState(false)
+
+    const patternList = [
+        {
+            name: "Dorthy Mini Doll",
+            image: dorthy,
+            screenName: "reader-dorthy"
+        },{
+            name: "Garnet Mini Doll",
+            image: garnet,
+            screenName: "reader-garnet"
+        },{
+            name: "Hekapoo Mini Doll",
+            image: hekapoo,
+            screenName: "reader-hekapoo"
+        },{
+            name: "Mother of Dragons Mini Doll",
+            image: motherOfDragons,
+            screenName: "reader-motherofdragons"
+        },{
+            name: "Rose Quartz Mini Doll",
+            image: rosequartz,
+            screenName: "reader-rosequartz"
+        },{
+            name: "Weeping Angel Mini Doll",
+            image: weepingAngel,
+            screenName: "reader-weepingangel"
+        }
+    ]
+
+    const mapPatternThumbnails = patternList.map((thumbnail, i) => {
+        return  <div className="pattern-thumbnail-container" key={i}>
+                    <img alt="pattern thumbnail" src={thumbnail.image}/>
+                </div>
+    })
+
+    const mapPatternThumbnailOverlays = patternList.map((overlay, i) => {
+        return  <div className="pattern-thumbnail-overlay-button" key={i} onClick={() => setCurrentScreen(overlay.screenName)}></div>
+    })
+
+    const mapPatternDisplay = patternList.map((pattern, i) => {
+                if (currentScreen === pattern.screenName) {
+                    return   <div className="pattern-screen demo-screen">
+                                <DemoHeader/>
+                                <div className="pattern-reader-container demo-page-container">
+                                    <h1>{pattern.name}</h1>
+                                    <img alt="pattern thumbnail" src={pattern.image}/>
+                                </div>
+                                <DemoFooter demoFooterToggle={demoFooterToggle} setDemoFooterToggle={setDemoFooterToggle}/>
+                            </div>
+                } else {
+                    return <></>
+                }
+    })
 
     return (
         <main className="app-demo-page page-container">
@@ -83,6 +141,13 @@ const StitchKeyDemo = () => {
                                 : <></>
                         }
                     </div>
+                    {
+                        currentScreen
+                            ?   <div className="library-buttons-container-overlay">
+                                    {mapPatternThumbnailOverlays}
+                                </div>
+                            :   <></>
+                    }
                 </div>
 
                 <img alt="phone-frame" className="phone-frame" src={phoneFrame} />
@@ -172,14 +237,19 @@ const StitchKeyDemo = () => {
                             :   <></>
                     }
                     {
-                        currentScreen === "reader"
-                            ?   <div className="reader-screen demo-screen">
+                        currentScreen === "library"
+                            ?   <div className="library-screen demo-screen">
                                     <DemoHeader/>
+                                    <div className="library-container demo-page-container">
+                                        {mapPatternThumbnails}
+                                    </div>
                                     <DemoFooter demoFooterToggle={demoFooterToggle} setDemoFooterToggle={setDemoFooterToggle}/>
                                 </div>
                             :   <></>
                     }
+                    {mapPatternDisplay}
                 </div>
+                <img alt="phone frame second layer" className="phone-frame-2" src={phoneFrame2}/>
 
                 <div className="right-panel">
                     {
