@@ -22,10 +22,10 @@ import motherOfDragons from "../images/characters/motherofdragons.jpg"
 import rosequartz from "../images/characters/rosequartz.jpg"
 import weepingAngel from "../images/characters/weepingangel.jpg"
 
-const DemoHeader = () => {
+const DemoHeader = (props) => {
     return (
         <div className="dashboard-header">
-            <h1>Hi, GeekeryMade</h1>
+            <h1 onClick={() => props.setCurrentScreen("dashboard")}>Hi, GeekeryMade</h1>
             <div className="dashboard-nav-container">
                 <img alt="envelope icon" src={emailIcon}/>
                 <img alt="alarm bell" src={alarmIcon}/>
@@ -43,19 +43,41 @@ const DemoFooter = (props) => {
     console.log(props.demoFooterToggle)
 
     return (
-        <div className="control-panel" onClick={props.setDemoFooterToggle}>
-            <img alt="control panel toggle" className="control-panel-toggle" src={yarnIcon}/>
+        <div 
+            className="control-panel" 
+            onClick={props.setDemoFooterToggle}
+        >
+            <img 
+                alt="control panel toggle" 
+                className="control-panel-toggle" 
+                src={yarnIcon}
+            />
             <div className={props.demoFooterToggle ? "control-panel-menu open" : "control-panel-menu closed"}>
-                <img alt="library icon" className="demo-menu-icons library-icon" src={booksIcon}/>
-                <img alt="library icon" className="demo-menu-icons projects-icon" src={projectIcon}/>
-                <img alt="library icon" className="demo-menu-icons writer-icon" src={writeIcon}/>
+                <img 
+                    alt="library icon" 
+                    className="demo-menu-icons library-icon" 
+                    src={booksIcon}
+                    onClick={() => props.setCurrentScreen("library")}
+                />
+                <img 
+                    alt="projects icon" 
+                    className="demo-menu-icons projects-icon" 
+                    src={projectIcon}
+                    onClick={() => props.setCurrentScreen("projects")}
+                />
+                <img 
+                    alt="writer icon" 
+                    className="demo-menu-icons writer-icon" 
+                    src={writeIcon}
+                    onClick={() => props.setCurrentScreen("writer")}
+                />
             </div>
         </div>
     )
 }
 
 const StitchKeyDemo = () => {
-    const [currentScreen, setCurrentScreen] = useState("reader-dorthy")
+    const [currentScreen, setCurrentScreen] = useState("dashboard")
     const [demoFooterToggle, setDemoFooterToggle] = useState(false)
 
     const patternList = [
@@ -88,23 +110,27 @@ const StitchKeyDemo = () => {
 
     const mapPatternThumbnails = patternList.map((thumbnail, i) => {
         return  <div className="pattern-thumbnail-container" key={i}>
-                    <img alt="pattern thumbnail" src={thumbnail.image}/>
+                    <img 
+                        alt="pattern thumbnail" 
+                        onClick={() => setCurrentScreen(thumbnail.screenName)}
+                        src={thumbnail.image}
+                    />
                 </div>
-    })
-
-    const mapPatternThumbnailOverlays = patternList.map((overlay, i) => {
-        return  <div className="pattern-thumbnail-overlay-button" key={i} onClick={() => setCurrentScreen(overlay.screenName)}></div>
     })
 
     const mapPatternDisplay = patternList.map((pattern, i) => {
                 if (currentScreen === pattern.screenName) {
                     return   <div className="pattern-screen demo-screen">
-                                <DemoHeader/>
+                                <DemoHeader setCurrentScreen={setCurrentScreen}/>
                                 <div className="pattern-reader-container demo-page-container">
                                     <h1>{pattern.name}</h1>
                                     <img alt="pattern thumbnail" src={pattern.image}/>
                                 </div>
-                                <DemoFooter demoFooterToggle={demoFooterToggle} setDemoFooterToggle={setDemoFooterToggle}/>
+                                <DemoFooter 
+                                    demoFooterToggle={demoFooterToggle} 
+                                    setDemoFooterToggle={setDemoFooterToggle}
+                                    setCurrentScreen={setCurrentScreen}
+                                />
                             </div>
                 } else {
                     return <></>
@@ -123,33 +149,6 @@ const StitchKeyDemo = () => {
             </div>
 
             <div className="demo-set-container">
-                <div className="demo-container-overlay">
-                    <div className="demo-control-panel-menu-overlay" onClick={() => setDemoFooterToggle(!demoFooterToggle)}>
-                        {
-                            demoFooterToggle
-                                ? <div className="libary-button-overlay" onClick={() => setCurrentScreen("library")}></div>
-                                : <></>
-                        }
-                        {
-                            demoFooterToggle
-                                ? <div className="projects-button-overlay" onClick={() => setCurrentScreen("projects")}></div>
-                                : <></>
-                        }
-                        {
-                            demoFooterToggle
-                                ? <div className="writer-button-overlay" onClick={() => setCurrentScreen("writer")}></div>
-                                : <></>
-                        }
-                    </div>
-                    {
-                        currentScreen
-                            ?   <div className="library-buttons-container-overlay">
-                                    {mapPatternThumbnailOverlays}
-                                </div>
-                            :   <></>
-                    }
-                </div>
-
                 <img alt="phone-frame" className="phone-frame" src={phoneFrame} />
                 <div className="screen-container">
                     {
@@ -162,12 +161,18 @@ const StitchKeyDemo = () => {
                     {
                         currentScreen === "dashboard"
                             ?   <div className="dashboard-screen demo-screen">
-                                    <DemoHeader/>
+                                    <DemoHeader setCurrentScreen={setCurrentScreen}/>
                                     <div className="card-list">
                                         <div className="pattern-card">
                                             <div className="pattern-card-image-container">
-                                                <img alt="pattern-image" className="pattern-card-image" src={weepingAngel}/>
-                                                <img alt="pattern-image-icon" className="pattern-image-icon" src={projectIcon}/>
+                                                <img 
+                                                    alt="pattern-image" 
+                                                    className="pattern-card-image" 
+                                                    onClick={() => setCurrentScreen("reader-weepingangel")}
+                                                    src={weepingAngel}
+                                                />
+                                                <img 
+                                                    alt="pattern-image-icon" className="pattern-image-icon" src={projectIcon}/>
                                             </div>
                                             <div className="pattern-notification">
                                                 <p className="pattern-card-title">Weeping Angel Mini Doll</p>
@@ -181,7 +186,12 @@ const StitchKeyDemo = () => {
                                         </div>
                                         <div className="pattern-card">
                                             <div className="pattern-card-image-container">
-                                                <img alt="pattern-image" className="pattern-card-image" src={dorthy}/>
+                                                <img 
+                                                    alt="pattern-image" 
+                                                    className="pattern-card-image" 
+                                                    onClick={() => setCurrentScreen("shopping-dorthy")}
+                                                    src={dorthy}
+                                                />
                                                 <img alt="pattern-image-icon" className="pattern-image-icon" src={checklistIcon}/>
                                             </div>
                                             <div className="pattern-notification top-align">
@@ -218,7 +228,12 @@ const StitchKeyDemo = () => {
                                         </div>
                                         <div className="pattern-card">
                                             <div className="pattern-card-image-container">
-                                                <img alt="pattern-image" className="pattern-card-image" src={motherOfDragons}/>
+                                                <img 
+                                                    alt="pattern-image" 
+                                                    className="pattern-card-image" 
+                                                    onClick={() => setCurrentScreen("reader-motherofdragons")}
+                                                    src={motherOfDragons}
+                                                />
                                                 <img alt="pattern-image-icon" className="pattern-image-icon" src={projectIcon}/>
                                             </div>
                                             <div className="pattern-notification">
@@ -232,18 +247,26 @@ const StitchKeyDemo = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <DemoFooter demoFooterToggle={demoFooterToggle} setDemoFooterToggle={setDemoFooterToggle}/>
+                                    <DemoFooter 
+                                        demoFooterToggle={demoFooterToggle} 
+                                        setDemoFooterToggle={setDemoFooterToggle}
+                                        setCurrentScreen={setCurrentScreen}
+                                    />
                                 </div>
                             :   <></>
                     }
                     {
                         currentScreen === "library"
                             ?   <div className="library-screen demo-screen">
-                                    <DemoHeader/>
+                                    <DemoHeader setCurrentScreen={setCurrentScreen}/>
                                     <div className="library-container demo-page-container">
                                         {mapPatternThumbnails}
                                     </div>
-                                    <DemoFooter demoFooterToggle={demoFooterToggle} setDemoFooterToggle={setDemoFooterToggle}/>
+                                    <DemoFooter 
+                                        demoFooterToggle={demoFooterToggle} 
+                                        setDemoFooterToggle={setDemoFooterToggle} setCurrentScreen={setCurrentScreen}  
+                                        setCurrentScreen={setCurrentScreen}
+                                    />
                                 </div>
                             :   <></>
                     }
