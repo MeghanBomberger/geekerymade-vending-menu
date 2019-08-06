@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+    /* font-family: 'Noto Sans', sans-serif; */
+    /* font-family: 'Inconsolata', monospace; */
+    /* font-family: 'Bangers', cursive; */
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    top: 12vh;
+    bottom: 3vh;
+    right: 68vw;
+    left: 2vw;
+}
+
+.loading-left-panel > h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 7.5rem;
+    font-weight: 300;
+    text-align: center;
+    transform: rotate(-15deg);
+}
+
+.loading-left-panel > .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 7.5px 0 7.5px;
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loading-left-panel > .triangle.one {
+    top: 18vh;
+    left: 12vw;
+    transform: rotate(-5deg)
+}
+
+.loading-left-panel > .triangle.two {
+    top: 18vh;
+    left: 18vw;
+    transform: rotate(10deg)
+}
+
+.loading-left-panel > .triangle.three {
+    top: 22vh;
+    left: 7vw;
+    transform: rotate(-30deg)
+}
+
+.loading-left-panel > .triangle.four {
+    top: 57vh;
+    left: 12vw;
+    transform: rotate(-175deg)
+}
+
+.loading-left-panel > .triangle.five {
+    top: 55vh;
+    left: 17vw;
+    transform: rotate(-190deg)
+}
+
+.loading-left-panel > .triangle.six {
+    top: 52vh;
+    left: 22vw;
+    transform: rotate(-215deg)
+}
