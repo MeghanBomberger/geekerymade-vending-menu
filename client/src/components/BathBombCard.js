@@ -1,14 +1,13 @@
 import React from "react"
 
-const BathBombCard = () => {
+import "../styles/BathBombMenu.css"
+
+const BathBombCard = (props) => {
+    console.log(props.productName)
+    console.log(props.productId)
     return (
-        <div className="bath-bomb-card">
-            <div className="bath-bomb-base">
-                <div className="bath-bomb-design-overlay">
-                    <div className="prize-embed-overlay"></div>
-                </div>
-            </div>
-            <h1></h1>
+        <div className="bathbomb-card">
+            <h1>{props.productName}</h1>
         </div>
     )
 }

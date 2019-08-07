@@ -81,7 +81,8 @@ const DemoFooter = (props) => {
 }
 
 const StitchKeyDemo = () => {
-    const [currentScreen, setCurrentScreen] = useState("loading")
+    // const [currentScreen, setCurrentScreen] = useState("loading")
+    const [currentScreen, setCurrentScreen] = useState("dashboard")
     const [demoFooterToggle, setDemoFooterToggle] = useState(false)
 
     const handleNavigateDemo = (location) => {
