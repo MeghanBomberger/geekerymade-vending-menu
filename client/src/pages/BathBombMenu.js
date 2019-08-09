@@ -3,141 +3,125 @@ import Airtable from 'airtable'
 import dotenv from 'dotenv'
 
 import '../styles/BathBombMenu.css'
+import BathBombCard from "../components/BathBombCard.js"
 
 require('dotenv').config()
 
-Airtable.configure({
-    apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}`
-})
-
-const base = Airtable.base(`${process.env.REACT_APP_BASE_KEY_BATHBOMBMENU}`)
+const base = new Airtable({ apiKey: `${process.env.REACT_APP_AIRTABLE_API_KEY}` }).base(`${process.env.REACT_APP_BASE_KEY_BATHBOMBMENU}`);
 
 const BathBombMenu = () => {
     const [bathBombData, setBathBombData] = useState([])
 
+    let tempArray = []
+    let mappedArray = []
+
     useEffect(() => {
-        base('bathbombmenu').select({
-            field: "productName",
-            direction: "desc"
-        }).eachPage(function page(record, fetchNextPage) {
-            record.forEach(function(record) {
-                const embedType = () => {
-                    if (record.fields.colorBurst1Name){
-                        return "color burst embed"
-                    } else if (record.fields.prizeEmbed){
-                        return "prize embed"
-                    }
-                }
-
-                const colorEmbedData = () => {
-                    if (record.fields.colorBurst2Name) {
-                        return [
-                            {
-                                colorName: record.fields.colorBurst1Name,
-                                rgba: record.fields.colorBurst1rgba
-                            },{
-                                colorName: record.fields.colorBurst2Name,
-                                rgba: record.fields.colorBurst2rgba
+        base("bathbombmenu").select()
+            .eachPage(
+                (records, fetchNextPage) => {
+                    tempArray = records
+                    
+                    records.forEach(function(record) {
+                        mappedArray.push({
+                            id: record.fields.productId,
+                            name: record.fields.productName,
+                            appearance: {
+                                shape: {
+                                    mold: record.fields.moldShapeName,
+                                    method: record.fields.moldingMethod
+                                },
+                                baseColor: {
+                                    color1: {
+                                        colorName: record.fields.baseColor1Name,
+                                        rgba: record.fields.color1rgba
+                                    },
+                                    color2: {
+                                        colorName: record.fields.baseColor2Name,
+                                        rgba: record.fields.color2rgba
+                                    }
+                                },
+                                designOverlay: record.fields.designOverlay,
+                                embedData: {
+                                    type: record.fields.embedCategory,
+                                    colorBurst: {
+                                        burst1: {
+                                            colorName: record.fields.colorBurst1Name,
+                                            rgba: record.fields.colorBurst1rgba
+                                        },
+                                        burst2: {
+                                            colorName: record.fields.colorBurst2Name,
+                                            rgba: record.fields.colorBurst2rgba
+                                        }
+                                    },
+                                    prize: {
+                                        type: record.fields.prizeType,
+                                        image: record.fields.prizeImage,
+                                        description: record.fields.prizeDescription
+                                    }
+                                }
+                            },
+                            tagData: {
+                                fandom: record.fields.fandom,
+                                fragranceTypes: record.fields.fragranceCategories,
+                                actionType: record.fields.embedCategory,
+                                prizeType: record.fields.prizeType
+                            },
+                            frangranceData: {
+                                fragranceOil1: record.fields.scent1Notes,
+                                fragranceOil2: record.fields.scent2Notes,
+                                fragranceOil3: record.fields.scent3Notes,
+                            },
+                            labelData: {
+                                weight: record.fields.weightOz,
+                                paints: record.fields.paintColors,
+                                colorants: {
+                                    baseColor1: {
+                                        colorName: record.fields.baseColor1Name,
+                                        rgba: record.fields.color1rgba
+                                    },
+                                    baseColor2: {
+                                        colorName: record.fields.baseColor2Name,
+                                        rgba: record.fields.color2rgba
+                                    },
+                                    burst1: {
+                                        colorName: record.fields.colorBurst1Name,
+                                        rgba: record.fields.colorBurst1rgba
+                                    },
+                                    burst2: {
+                                        colorName: record.fields.colorBurst2Name,
+                                        rgba: record.fields.colorBurst2rgba
+                                    },
+                                    additive: record.fields.additive
+                                }
                             }
-                        ]
-                    } else if (record.fields.colorBurst1Name) {
-                        return [
-                            {
-                                colorName: record.fields.colorBurst1Name,
-                                rgba: record.fields.colorBurst1rgba
-                            }
-                        ]
-                    } else {
-                        return []
-                    }
+                        })
+                    })
+                    setBathBombData(mappedArray)
+                    fetchNextPage()
                 }
+        )
 
-                const tagsList = () => {
-                    return [
-                        ...record.fields.fandom,
-                        ...record.fields.fragranceCategories,
-                        record.fields.baseColor1Name,
-                        record.fields.baseColor2Name,
-                        record.fields.embedCategory,
-                        record.fields.prizeType
-                    ]
-                }
-
-                const newBathBomb = {
-                    id: record.fields.id,
-                    productName: record.fields.productName,
-                    shape: record.fields.moldShapeName,
-                    moldingMethod: record.fields.moldingMethod,
-                    weight: `${record.fields.weightInOz}oz`,
-                    baseColors: [record.fields.baseColor1Name, record.fields.baseColor2Name],
-                    embedType: embedType,
-                    colorEmbedData: colorEmbedData,
-                    prizeEmbedData: {
-                        prizeCategory: record.fields.prizeType,
-                        prizeDescription: record.fields.prizeDescription,
-                        prizeImage: record.fields.prizeImage
-                    },
-                    scentNotesList: record.fields.scentDescription,
-                    tags: tagsList,
-                    designOverlay: record.fields.designOverlay
-                }
-
-                setBathBombData([...bathBombData, newBathBomb])
-                //compare this to the blog mapping in justutahcoders.org project
-            })
-            fetchNextPage()
-        }, function done(err) {
-            if (err) { 
-                console.log(err)
-                // alert("An error has occurred. Please inform the booth attendant. Thank you for your patience.")
-                return
-            }
-        })
     }, [])
+
+    const mapCards = bathBombData.map((bathbomb, i) => {
+        return  <BathBombCard 
+                    key={i}
+                    productId={bathbomb.id}
+                    name={bathbomb.name}
+                    appearanceData={bathbomb.appearance}
+                    fragranceData={bathbomb.frangranceData}
+                    tagsData={bathbomb.tagData}
+                    labelData={bathbomb.labelData}
+                />
+    })
 
     return (
         <main className="bathbombmenu-page page-container">
             <div className="bathbomb-card-list">
-                
+                {mapCards}
             </div>
         </main>
     )
 }
 
 export default BathBombMenu
-
-// TODO LIST
-    // Images
-        // Bath Bomb Bases
-            // sphere
-            // circle
-            // oval
-            // rectangle
-            // square
-            // gem
-            // mushroom
-            // fox
-            // round flower
-            // point flower
-        // data entry
-            // seed list x5
-            // full list
-        // zoom toggle
-        // action
-            // single color
-            // dual color
-            // single color burst
-            // dual color burst
-        // genre sort
-            // fantasy
-            // scifi
-            // anime
-            // cartoon
-            // video games
-        // scent sort
-            // floral
-            // tea based
-            // fruity
-            // bakery
-            // woodsy
-            // beachy

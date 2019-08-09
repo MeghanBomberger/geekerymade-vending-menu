@@ -5,14 +5,13 @@
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
 </style>
-<radialGradient id="SVGID_1_" cx="377.2811" cy="403.3056" r="311.2718" fx="682.4719" fy="342.0786" gradientUnits="userSpaceOnUse">
-	<stop  offset="0" style="stop-color:#F7AC2D"/>
-	<stop  offset="0" style="stop-color:#F7AC2D"/>
-	<stop  offset="0.1826" style="stop-color:#F7AF32"/>
-	<stop  offset="0.3927" style="stop-color:#F9B840"/>
-	<stop  offset="0.6163" style="stop-color:#FAC657"/>
-	<stop  offset="0.8479" style="stop-color:#FDDA77"/>
-	<stop  offset="1" style="stop-color:#FFEA90"/>
+<radialGradient id="SVGID_1_" cx="377.2811" cy="403.3056" r="311.2718" fx="110.5041" fy="563.6807" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFF315"/>
+	<stop  offset="0.2364" style="stop-color:#FFF217"/>
+	<stop  offset="0.3215" style="stop-color:#FFEF1E"/>
+	<stop  offset="0.382" style="stop-color:#FFE929"/>
+	<stop  offset="0.4307" style="stop-color:#FFE13A"/>
+	<stop  offset="0.4415" style="stop-color:#FFDF3F"/>
 </radialGradient>
 <path class="st0" d="M92.4,153.2c-7.7,17.1-14.2,34.7-19.5,52.5c-5.1,17.9-8.8,36.2-11.2,54.5L60.2,274c-0.4,4.6-0.6,9.2-0.9,13.8
 	c-0.4,4.6-0.3,9.2-0.4,13.8l-0.1,6.9c0,2.3,0.1,4.6,0.2,6.9l0.3,6.9c0.1,2.3,0.1,4.6,0.4,6.9l1.2,13.7c1.2,9.1,2.2,18.2,4,27.2

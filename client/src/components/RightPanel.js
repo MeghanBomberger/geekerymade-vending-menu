@@ -20,6 +20,19 @@ const RightPanel = (props) => {
                         </div>
                     :   <></>
             }
+
+            {
+                props.currentScreen === "dashboard"
+                    ?   <div className="dashboard-right-panel">
+                            <ul>
+                                <li>Track your progress on projects</li>
+                                <li>Use ready made supply lists to stay organized</li>
+                                <li>Community help built in</li>
+                                <li>Read and write patterns anywhere!</li>
+                            </ul>
+                        </div>
+                    :   <></>
+            }
         </div>
     )
 }

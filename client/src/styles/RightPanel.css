@@ -70,3 +70,10 @@
     left: 6vw;
     transform: rotate(-140deg)
 }
+
+.dashboard-right-panel > ul {
+    color: white;
+    font-size: 5vh;
+    font-weight: 600;
+    
+}

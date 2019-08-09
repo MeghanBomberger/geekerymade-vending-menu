@@ -25,6 +25,7 @@ const LeftPanel = (props) => {
             {
                 props.currentScreen === "dashboard"
                     ?   <div className="dashboard-left-panel">
+                            <p>With StitchKey all your crochet crafting needs are covered.</p>
                         </div>
                     :   <></>
             }
