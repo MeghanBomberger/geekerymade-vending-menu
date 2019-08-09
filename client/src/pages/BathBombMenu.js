@@ -16,16 +16,12 @@ const BathBombMenu = () => {
     let mappedArray = []
 
     useEffect(() => {
-
         base("bathbombmenu").select()
             .eachPage(
                 (records, fetchNextPage) => {
                     tempArray = records
                     
                     records.forEach(function(record) {
-                        console.log("")
-                        console.log('Retrieved', record.get('productId'));
-                        console.log(record.fields)
                         mappedArray.push({
                             id: record.fields.productId,
                             name: record.fields.productName,
@@ -100,30 +96,30 @@ const BathBombMenu = () => {
                             }
                         })
                     })
-
-                    console.log("")
-                    console.log("mappedArray:")
-                    console.log(mappedArray)
-
                     setBathBombData(mappedArray)
-
                     fetchNextPage()
                 }
         )
 
     }, [])
 
-    console.log("")
-    console.log("bathBombData")
-    console.log(bathBombData)
-
     const mapCards = bathBombData.map((bathbomb, i) => {
-        return <h1>{bathbomb.name}</h1>
+        return  <BathBombCard 
+                    key={i}
+                    productId={bathbomb.id}
+                    name={bathbomb.name}
+                    appearanceData={bathbomb.appearance}
+                    fragranceData={bathbomb.frangranceData}
+                    tagsData={bathbomb.tagData}
+                    labelData={bathbomb.labelData}
+                />
     })
 
     return (
         <main className="bathbombmenu-page page-container">
-            {mapCards}
+            <div className="bathbomb-card-list">
+                {mapCards}
+            </div>
         </main>
     )
 }
