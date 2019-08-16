@@ -13,7 +13,8 @@
     top: 12vh;
     bottom: 3vh;
     right: 2vw;
-    left: 72vw;
+    left: 65vw;
+    /* background-color: red; */
 }
 
 .loading-right-panel > h1 {
@@ -71,9 +72,45 @@
     transform: rotate(-140deg)
 }
 
-.dashboard-right-panel > ul {
+.dashboard-right-panel > p {
     color: white;
-    font-size: 5vh;
+    font-size: 3rem;
     font-weight: 600;
-    
+    text-align: center;
+}
+
+.dashboard-right-1 {
+    position: absolute;
+    top: 15vh;
+    right: 0;
+    left: 0;
+}
+
+.dashboard-right-panel > .arrow-1 {
+    transform: rotate(-15deg);
+    position: absolute;
+    top: 25vh;
+    left: -5vw;
+}
+
+.dashboard-right-panel > .arrow-1 > .arrow-line {
+    width: 14.5vw;
+}
+
+.dashboard-right-2 {
+    position: absolute;
+    top: 40vh;
+    right: 0;
+    left: 0;
+}
+
+.dashboard-right-panel > .arrow-2 {
+    transform: rotate(-10deg);
+    position: absolute;
+    top: 48.5vh;
+    left: -5.5vw;
+}
+
+.dashboard-right-panel > .arrow-2 > .arrow-line {
+    width: 7vw;
 }

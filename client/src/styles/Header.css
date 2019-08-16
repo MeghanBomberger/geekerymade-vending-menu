@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    /* z-index: 6; */
 }
 
 .app-header > .home-link {
@@ -15,7 +16,7 @@
 }
 
 .app-header > .home-link > .logo {
-    height: 10vh;
+    height: 15vh;
     animation: pulse 3s infinite;
 }
 
@@ -24,7 +25,7 @@
         filter: drop-shadow(rgba(255, 255, 255, 0) 0rem 0rem 1rem);
     }
     50% {
-        filter: drop-shadow(blue 0rem 0rem 1rem);
+        filter: drop-shadow(rgb(255, 255, 255) 0rem 0rem 1rem);
     }
 }
 
@@ -32,5 +33,30 @@
     font-family: 'Amatic SC', cursive;
     font-size: 4.5vh;
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(13, 173, 185);
+    padding:  10pt 15pt 10pt 15pt;
+    border-radius: 30pt;
+    text-shadow: rgba(0, 0, 0, 0.377) 5px 5px 1px;
+    font-weight: 600;
+    border: white 3px solid;
+    box-shadow: black 3px 3px 1px,
+                            rgba(0, 0, 0, 0.486) 15px 15px 15px;
+}
+
+.app-header > .bath-bomb-menu-btn {
+    background-color: rgb(5, 134, 255);
+}
+
+.app-header > .custom-bracelet-btn {
+    background-color: rgb(173, 15, 165);
+    background-color: rgb(255, 5, 213);
+}
+
+.app-header > .crochet-character-btn {
+    background-color: rgb(173, 15, 165);
+}
+
+.app-header > .stitchkey-demo-menu-btn {
+    background-color: rgb(255, 5, 101);
 }

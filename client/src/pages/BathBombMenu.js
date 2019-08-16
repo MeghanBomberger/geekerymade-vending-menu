@@ -171,10 +171,6 @@ const BathBombMenu = () => {
 
     useEffect(() => {
         if (bathBombData.length > 0) {
-            console.log("sorting arrays")
-
-            console.log("sortying by fandom")
-
             const fandomArrayAnime = []
             const fandomArrayFantasy = []
             const fandomArrayStarWars = []
@@ -194,7 +190,6 @@ const BathBombMenu = () => {
             const fandomArrayTolkien = []
 
             const mapFandomArray = bathBombData.map((bathbomb, i) => {
-                console.log(bathbomb)
                 if (bathbomb.tagData.fandom === "Anime"){
                     const data = {
                         
@@ -336,7 +331,6 @@ const BathBombMenu = () => {
     }, [bathBombData])
 
     const mapCards = bathBombData.map((bathbomb, i) => {
-        
         return  <BathBombCard 
                     key={i}
                     productId={bathbomb.id}
@@ -371,7 +365,7 @@ const BathBombMenu = () => {
 
     return (
         <main className="bathbombmenu-page page-container">
-            <div className="bathbomb-menu-nav">
+            {/* <div className="bathbomb-menu-nav">
                 <div className="filter-menu-container" onClick={() => handleRevealSubMenu("byFandom")}>
                     <div className="bathbomb-menu-nav-filter-button">
                         Filter By Fandom
@@ -397,7 +391,7 @@ const BathBombMenu = () => {
                         Prize Inside Bath Bombs
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {
                 displayedArray === "byFandom"

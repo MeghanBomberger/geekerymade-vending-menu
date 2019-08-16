@@ -6,14 +6,29 @@
     min-height: 82vh;
 }
 
-.stitch-key-demo-prompt {
+.try-me {
+    position: absolute;
+    top: 15.5vh;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: 15rem;
+    color: rgb(255, 0, 119);
+    filter: drop-shadow(black 5px 16px 1px);
+    animation: pulse 3s infinite;
+
+}
+
+.prompt-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 29vw;
+    margin: 29vh 1vw 0 1vw;
 }
 
-.stitch-key-demo-prompt > h1 {
+.prompt-container > h1 {
     color: white;
     text-align: center;
     font-family: 'Abel', sans-serif;
@@ -21,43 +36,37 @@
     margin: 0 0 3vh 0;
 }
 
-.stitch-key-demo-prompt > h2 {
+.prompt-container > h2 {
     color: white;
     text-align: center;
     font-family: 'Abel', sans-serif;
-    font-size: 2.75rem;
+    font-size: 2rem;
     margin: 3vh 0 0 0;
 }
 
-.details-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
 .stitch-key-logo {
-    height: 50vh;
-    margin: 0 5vw 0 0;
+    height: 30vh;
+    margin: 0 13vw 0 0;
+    filter: drop-shadow(rgba(0, 0, 0, 0.459) 3px 3px 15px) drop-shadow(rgba(255, 255, 255, 0.75) 3px 3px 15px);
 }
 
-.description-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 25vw;
-    margin: 0 10vw 0 0;
+.commission-image {
+    height: 30vh;
+    margin: 0 0 0 0;
+    filter: drop-shadow(rgba(0, 0, 0, 0.459) 3px 3px 15px) drop-shadow(rgba(255, 255, 255, 0.65) 3px 3px 15px);
 }
 
-.description-container > h3 {
-    color: white;
-    text-align: left;
-    font-size: 2.25rem;
-    margin: 2vh 0 0 0;
+.bathbomb-example-image {
+    height: 30vh;
+    margin: 0 0 0 0;
+    filter: drop-shadow(rgba(0, 0, 0, 0.459) 3px 3px 15px) drop-shadow(rgba(255, 255, 255, 0.65) 3px 3px 15px);
 }
 
-.description-container > ul {
-    color: white;
-    font-size: 1.75rem;
-
+@keyframes pulse {
+    0%, 100% {
+        filter: drop-shadow(rgba(255, 255, 255, 0) 0rem 0rem 1rem);
+    }
+    50% {
+        filter: drop-shadow(rgb(255, 255, 255) 0rem 0rem 1rem);
+    }
 }

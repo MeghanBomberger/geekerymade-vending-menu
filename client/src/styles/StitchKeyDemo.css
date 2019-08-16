@@ -393,3 +393,53 @@
 .shopping-container > .pattern-notification > .list-item {
     width: 12vw;
 }
+
+.stitchkey-signup-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 36vw;
+    background-color: black;
+    padding: 2vh 1vw 2.75vh 0;
+    box-shadow:  rgba(255, 255, 255, 0.5) 6vw -3px 15px;
+}
+
+.confirmation-container > h2 {
+    margin: 0 0 3vh 0;
+    font-family: 'Nixie One', cursive;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.mailing-list > h2 {
+    margin: 0 0 3vh 0;
+    font-family: 'Nixie One', cursive;
+    font-size: 2.25rem;
+    text-align: center;
+    color: white;
+}
+
+.mailing-list > input {
+    background-color: rgba(0, 225, 255, 0.931);
+    border: white solid 2px;
+    box-shadow: rgba(40, 20, 94, 0.295) 3px 3px 1px;
+    padding: 10pt;
+    text-align: center;
+    margin: 0 15pt 0 0;
+    width: 20vw;
+    font-size: 2rem;
+}
+
+.mailing-list > button {
+    background-color: rgb(140, 0, 255);
+    border: none;
+    border-radius: 15pt;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10pt 15pt 10pt 15pt;
+    box-shadow: black 1pt 1pt 1pt;
+}
+

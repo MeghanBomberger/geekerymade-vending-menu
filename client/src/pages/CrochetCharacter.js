@@ -31,7 +31,9 @@ const CrochetCharacter = () => {
     return (
         <main className="character-commission-page page-container">
             <h1>Don't see the character you want on display? Get a custom one made!</h1>
+
             <form name="crochetCharacter" onSubmit="handleSubmitCharacterCommission">
+                <h2>Use attached keyboard below to fill out form</h2>
                 <label>
                     <p>Character Name:</p>
                     <input 

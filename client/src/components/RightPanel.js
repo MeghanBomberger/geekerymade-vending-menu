@@ -2,7 +2,7 @@ import React from "react"
 
 import "../styles/RightPanel.css"
 
-import curvedArrow from "../images/stitchkeydemo/right-arrow.svg"
+import arrowPoint from "../images/stitchkeydemo/next.svg"
 
 const RightPanel = (props) => {
     return (
@@ -24,12 +24,18 @@ const RightPanel = (props) => {
             {
                 props.currentScreen === "dashboard"
                     ?   <div className="dashboard-right-panel">
-                            <ul>
-                                <li>Track your progress on projects</li>
-                                <li>Use ready made supply lists to stay organized</li>
-                                <li>Community help built in</li>
-                                <li>Read and write patterns anywhere!</li>
-                            </ul>
+                            <p className="dashboard-right-1">Track progress as you go on all your WIPs</p>
+                            <div className="arrow arrow-1">
+                                <img alt="arrow point" className="arrow-point" src={arrowPoint}/>
+                                <div className="arrow-line"></div>
+                            </div>
+
+                            <p className="dashboard-right-2">Make project planning a breeze with automated supply lists</p>
+                            <div className="arrow arrow-2">
+                                <img alt="arrow point" className="arrow-point" src={arrowPoint}/>
+                                <div className="arrow-line"></div>
+                            </div>
+
                         </div>
                     :   <></>
             }

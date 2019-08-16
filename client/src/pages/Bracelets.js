@@ -1878,6 +1878,7 @@ const Bracelets = () => {
                                 </div>
                             </div>
                             <div className="make-changes" onClick={handleMakeChanges}>Make Changes to Your Design</div>
+                            <h1>Use attached keyboard below to fill out form</h1>
                             <div className="customer-info">
                                 <label>
                                     <span>Your Name: </span>

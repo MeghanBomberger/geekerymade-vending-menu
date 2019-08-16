@@ -10,7 +10,8 @@
 body {
     font-family: 'Abel', sans-serif;
     font-size: 10pt;
-    background-color: rgb(143, 0, 187);
+    /* background-color: rgb(117, 22, 129); */
+    background-color: rgb(59, 7, 75);
 }
 
 .page {

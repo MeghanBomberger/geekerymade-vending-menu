@@ -2,7 +2,7 @@ import React from "react"
 
 import "../styles/LeftPanel.css"
 
-import curvedArrow from "../images/stitchkeydemo/right-arrow.svg"
+import arrowPoint from "../images/stitchkeydemo/next.svg"
 
 const LeftPanel = (props) => {
     return (
@@ -25,7 +25,17 @@ const LeftPanel = (props) => {
             {
                 props.currentScreen === "dashboard"
                     ?   <div className="dashboard-left-panel">
-                            <p>With StitchKey all your crochet crafting needs are covered.</p>
+                            <p className="dashboard-left-1">With StitchKey all your crochet crafting needs are covered.</p>
+                            <p className="dashboard-left-2">Read. Write. Craft.</p>
+                            <div className="arrow arrow-2">
+                                <img alt="arrow point" className="arrow-point" src={arrowPoint}/>
+                                <div className="arrow-line"></div>
+                            </div>
+                            <p className="dashboard-left-3">Get live community help from others with the same patterns</p>
+                            <div className="arrow arrow-3">
+                                <img alt="arrow point" className="arrow-point" src={arrowPoint}/>
+                                <div className="arrow-line"></div>
+                            </div>
                         </div>
                     :   <></>
             }
@@ -59,7 +69,7 @@ const LeftPanel = (props) => {
             }
 
             {
-                props.currentScreen === "reader-dorthy"
+                props.currentScreen === "reader"
                     ?   <div className="reader-left-panel">
                         </div>
                     :   <></>
