@@ -10,7 +10,6 @@ import TwoToneMixedSphere from "./bathbombexamples/shape/TwoToneMixedSphere.js"
 import OneColorBurst from "./bathbombexamples/colorburst/SingleColorBurst.js"
 import TwoColorBursts from "./bathbombexamples/colorburst/DoubleColorBurst.js"
 import FourColorBursts from "./bathbombexamples/colorburst/QuadrupleColorBurst.js"
-import SingleColorBurst from "./bathbombexamples/colorburst/SingleColorBurst.js";
 
 const ComingSoon = (props) => {
     return  <div className="coming-soon">
@@ -20,7 +19,9 @@ const ComingSoon = (props) => {
 
 const BathBombCard = (props) => {
     const [toggleOpen, setToggleOpen] = useState(false)
+    // move the toggleOpen to the bathbombmenu component and have the "true" be based on if the currect open = the name of the bathbomb or id or something
     const [fragranceDescription, setFragranceDescription] = useState("")
+    const [colorBurstCount, setColorBurstCount] = useState("")
 
     const mapBase = props.appearanceData.shape.mold.map((moldName, i) => {
         if (moldName === `2.5" Sphere`) {
@@ -54,7 +55,7 @@ const BathBombCard = (props) => {
                 fragrancesArray.push(props.fragranceData.fragranceOil1[i])
             }
         }
-        
+
         if (props.fragranceData.fragranceOil2 !== undefined) {
             for (let i = 0; i < props.fragranceData.fragranceOil2.length; i++) {
                 fragrancesArray.push(props.fragranceData.fragranceOil2[i])
@@ -79,9 +80,23 @@ const BathBombCard = (props) => {
                 setFragranceDescription(fragranceString)
             }
         }
+
+        if (props.appearanceData.embedData.colorBurst.burst1.rgba === undefined) {
+            setColorBurstCount(0)
+        } else if (props.appearanceData.embedData.colorBurst.burst2.rgba === undefined) {
+            setColorBurstCount(1)
+        } else if (props.appearanceData.embedData.colorBurst.burst3.rgba === undefined) {
+            setColorBurstCount(2)
+        } else if (props.appearanceData.embedData.colorBurst.burst4.rgba === undefined) {
+            setColorBurstCount(3)
+        } else {
+            setColorBurstCount(4)
+        }
+
     }, [props])
 
     console.log(props.appearanceData.embedData.colorBurst)
+    console.log(colorBurstCount)
 
     return (
         <div className="bathbomb-card" id={`bathbomb-${props.id}`} onClick={() => setToggleOpen(!toggleOpen)}>
@@ -106,16 +121,35 @@ const BathBombCard = (props) => {
                     :   <></>
                 }
                 {
-                    props.appearanceData.embedData.colorBurst.burst1.rgba === undefined
-                        ? <></>
-                        : <SingleColorBurst burst1={props.appearanceData.embedData.colorBurst.burst1.rgba[0]}/>
+                    colorBurstCount === 4
+                        ?   <FourColorBursts 
+                                burst1={props.appearanceData.embedData.colorBurst.burst1.rgba[0]}
+                                burst2={props.appearanceData.embedData.colorBurst.burst2.rgba[0]}
+                                burst3={props.appearanceData.embedData.colorBurst.burst3.rgba[0]}
+                                burst4={props.appearanceData.embedData.colorBurst.burst4.rgba[0]}
+                            />
+                        :   <></>
+                }
+                {
+                    colorBurstCount === 2
+                        ?   <TwoColorBursts 
+                                burst1={props.appearanceData.embedData.colorBurst.burst1.rgba[0]}
+                                burst2={props.appearanceData.embedData.colorBurst.burst2.rgba[0]}
+                            />
+                        :   <></>
+                }
+                {
+                    colorBurstCount === 1
+                        ?   <OneColorBurst 
+                                burst1={props.appearanceData.embedData.colorBurst.burst1.rgba[0]}
+                            />
+                        :   <></>
                 }
                 <div className={toggleOpen === true ? "bath-bomb-description-container" : "bath-bomb-description-container closed"}>
                     <h1>Fragrance:</h1>
                     <p>{fragranceDescription}</p>
                 </div>
             </div>
-                
         </div>
     )
 }

@@ -116,6 +116,14 @@ const BathBombMenu = () => {
                                         burst2: {
                                             colorName: record.fields.colorBurst2Name,
                                             rgba: record.fields.colorBurst2rgba
+                                        },
+                                        burst3: {
+                                            colorName: record.fields.colorBurst3Name,
+                                            rgba: record.fields.colorBurst3rgba
+                                        },
+                                        burst4: {
+                                            colorName: record.fields.colorBurst4Name,
+                                            rgba: record.fields.colorBurst4rgba
                                         }
                                     },
                                     prize: {
