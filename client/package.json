@@ -6,7 +6,7 @@
     "@reach/router": "^1.2.1",
     "@svgr/cli": "^4.3.2",
     "@svgr/core": "^4.3.2",
-    "airtable": "^0.7.0",
+    "airtable": "^0.7.2",
     "animate.css": "^3.7.2",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
